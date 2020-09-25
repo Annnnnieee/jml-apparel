@@ -7,6 +7,7 @@ import Product from './Product/Product';
 import Quality from './Quality/Quality';
 import Expo from './Expo/Expo';
 import About from './About/About';
+import Footer from './Footer/Footer';
 import {
   BrowserRouter as Router,
   Switch,
@@ -69,6 +70,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
 

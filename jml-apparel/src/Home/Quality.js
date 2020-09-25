@@ -10,8 +10,8 @@ import Grid from '@material-ui/core/Grid';
 
 function Quality() {
   return (
-    <div >
-        <div className="section-title">Quality and Sustainability</div>
+    <div className="home-section">
+        <div className="home-section-title">Quality and Sustainability</div>
         <Grid container className="quality-section" spacing={1} justify="center">
           <Grid item xs={4}>
             <Card>

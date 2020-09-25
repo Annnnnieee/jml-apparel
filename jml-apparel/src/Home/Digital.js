@@ -9,8 +9,8 @@ import Digital02 from '../assets/lp-digital02.jpg';
 
 function Digital() {
     return (
-        <div>
-            <div className="section-title">Digital</div>
+        <div className="home-section">
+            <div className="home-section-title">Digital</div>
             <Grid container className="digital-section" spacing={1} justify="center">
                 <Grid item xs={12} sm={6} key="digital01">
                     <Card className="product-card">

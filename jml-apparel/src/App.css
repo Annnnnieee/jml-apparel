@@ -13,6 +13,18 @@
   }
 }
 
+img {
+  max-width:100%;
+  max-height:100%;
+}
+
+
+.home-section{
+  background-color:lightgrey;
+  padding-bottom: 20px;
+  margin-bottom:3px;
+}
+
 /* .product-card{
   max-width: 450px;
   max-height: 450px;
