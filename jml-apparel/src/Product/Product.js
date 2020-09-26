@@ -2,11 +2,6 @@ import React from 'react';
 import productTitle from '../assets/product-title.jpg'
 import Container from '@material-ui/core/Container';
 
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-
 import Elastics from '../assets/product-elastics01.jpg';
 import Drawcords from '../assets/product-drawcords01.jpg';
 import Hangtags from '../assets/product-hangtags01.jpg';
