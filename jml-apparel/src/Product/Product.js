@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
 
 import Elastics from '../assets/product-elastics01.jpg';
 import Drawcords from '../assets/product-drawcords01.jpg';
@@ -33,44 +34,62 @@ function Product() {
             <div>
                 <Grid container spacing={1} justify="center">
                     <Grid item xs={12} sm={6} >
-                        <Card >
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    image={Elastics}
-                                />
-                            </CardActionArea>
-                        </Card>
+                        <Paper>
+                            <img src={Elastics} alt="elastics" />
+                            <Box>
+                                <div>Elastics</div>
+                                <ul>
+                                    <li>Bra straps</li>
+                                    <li>Underband and waistband elastics</li>
+                                    <li>Gripper elastics</li>
+                                    <li>Mesh</li>
+                                    <li>Recycled elastics</li>
+                                    <li>Biodegradable elasics</li>
+                                    <li>Anti-microbial elastics</li>
+                                </ul>
+                            </Box>
+                        </Paper>
                     </Grid>
                     <Grid item xs={12} sm={6} >
-                        <Card >
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    image={Drawcords}
-                                />
-                            </CardActionArea>
-                        </Card>
+                        <Paper>
+                            <img src={Drawcords} />
+                            <Box>
+                            <div>Drawcords</div>
+                            <ul>
+                                <li>Metal tipped</li>
+                                <li>TPU tipped</li>
+                                <li>ABS tipped</li>
+                                <li>Specialty tips</li>
+                                <li>Stretch</li>
+                                <li>Non-stretch</li>
+                            </ul>
+                            </Box>
+                        </Paper>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <Card className="product-card">
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    image={Hangtags}
-                                />
-                            </CardActionArea>
-                        </Card>
+                        <Paper>
+                            <img src={Hangtags} alt="hangtags" />
+                            <Box>
+                            <div>Hangtags</div>
+                            <ul>
+                                <li>Paper hangtag</li>
+                                <li>Paper packaging</li>
+                                <li>Shopping bags</li>
+                            </ul>
+                            </Box>
+                        </Paper>
                     </Grid>
                     <Grid item xs={12} sm={6} >
-                        <Card >
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    image={Labels}
-                                />
-                            </CardActionArea>
-                        </Card>
+                        <Paper>
+                            <img src={Labels} alt="labels" />
+                            <Box>
+                            <div>Labels</div>
+                            <ul>
+                                <li>Woven Labels</li>
+                                <li>Print Labels</li>
+                            </ul>
+                            </Box>
+                        </Paper>
                     </Grid>
                 </Grid>
             </div>
