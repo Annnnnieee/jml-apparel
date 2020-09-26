@@ -2,9 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav {
+  list-style-type:none;
+}
+
+.nav li {
+  display: inline;
+  margin-left: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

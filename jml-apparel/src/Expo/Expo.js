@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
 
 import expoCover from '../assets/expo-title.jpg';
 import expoCoverAlt from '../assets/expo-alt-title.jpg';
@@ -15,83 +16,96 @@ import expo2021ORWinter from '../assets/expo-2021-OR-winter.jpg';
 import expo2021performanceSummerMunich from '../assets/expo-2021-performance-days-summer-munich.jpg';
 import expo2021ORSummer from '../assets/expo-2021-OR-summer.jpg';
 import expo2021performanceWinterMunich from '../assets/expo-2021-performance-days-winter-munich.jpg';
+import { useTheme } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        border: 0,
+        borderRadius: 3,
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+    },
+    expoHeader: {
+        backgroundColor: "grey",
+        paddingTop: "10px",
+        paddingBottom: "10px",
+        textAlign: "center"
+    },
+    expoItem: {
+        display: "flex",
+        flexDirection: "row",
+        backgroundColor: "lightgrey",
+        padding: "50px 100px 30px 20px",
+        marginBottom: "10px"
+    }
+}));
 
 function Expo() {
+    const events2020 =
+        [
+            { image: expo2020ipso, title: "Some Title", body: "some description" },
+            { image: expo2020PerformanceMunich, title: "Some Title", body: "some description" },
+            { image: expo2020PerformancePortland, title: "Some Title", body: "some description" },
+        ]
+
+    const events2021 =
+        [
+            { image: expo2021ORWinter, title: "Some Title", body: "some description" },
+            { image: expo2021performanceSummerMunich, title: "Some Title", body: "some description" },
+            { image: expo2021ORSummer, title: "Some Title", body: "some description" },
+            { image: expo2021performanceWinterMunich, title: "Some Title", body: "some description" },
+        ]
+    const classes = useStyles();
     return (
         <Container>
-        <img src={expoCover} alt="expo cover image" />
-  
-        <div>
-            <div>2020 EVENTS</div>
-          <Grid container spacing={1} justify="center">
-            <Grid item xs={12} >
-              <Paper>
-                <img src={expo2020ipso} />
-                <Box>
-                  <div>contact info</div>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} >
-              <Paper>
-                <img src={expo2020PerformancePortland} />
-                <Box>
-                  <div>contact info in chinese</div>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} >
-              <Paper>
-                <img src={expo2020PerformanceMunich} />
-                <Box>
-                  <div>contact info in chinese</div>
-                </Box>
-              </Paper>
-            </Grid>
-            </Grid>
+            <img src={expoCover} alt="expo cover image" className="cover" />
 
-            <div>2021 EVENTS</div>
+            <div>
+                <div className={classes.expoHeader}>2020 EVENTS</div>
+                <Grid container item spacing={0} justify="center" >
+                    {
+                        events2020.map(event => (
+                            <Grid container xs={12} className={classes.expoItem} >
+                                <Grid item xs={12} sm={6}>
+                                    <img src={event.image} />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Box>
+                                        <div>{event.title}</div>
+                                    </Box>
+                                </Grid>
 
-            <Grid container spacing={1} justify="center">
-            <Grid item xs={12} >
-              <Paper>
-                <img src={expo2021ORWinter} />
-                <Box>
-                  <div>contact info in chinese</div>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item xs={12} >
-              <Paper>
-                <img src={expo2021performanceSummerMunich} />
-                <Box>
-                  <div>contact info in chinese</div>
-                </Box>
-              </Paper>
-            </Grid>
+                            </Grid>
+                        ))
+                    }
+                </Grid>
 
-            <Grid item xs={12} >
-              <Paper>
-                <img src={expo2021ORSummer} />
-                <Box>
-                  <div>contact info in chinese</div>
-                </Box>
-              </Paper>
-            </Grid>
+                <div className={classes.expoHeader}>2021 EVENTS</div>
+                <Grid container spacing={0} justify="center">
+                    {
+                        events2021.map(event => (
+                            <Grid container xs={12} className={classes.expoItem} >
+                                <Grid item xs={12} sm={6}>
+                                    <img src={event.image} />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Box>
+                                        <div>{event.title}</div>
+                                    </Box>
+                                </Grid>
 
-            <Grid item xs={12} >
-              <Paper>
-                <img src={expo2021performanceWinterMunich} />
-                <Box>
-                  <div>contact info in chinese</div>
-                </Box>
-              </Paper>
-            </Grid>
-            
-          </Grid>
-          
-        </div>
-      </Container>
+                            </Grid>
+                        ))
+                    }
+
+                </Grid>
+
+            </div>
+        </Container>
     );
 }
 
