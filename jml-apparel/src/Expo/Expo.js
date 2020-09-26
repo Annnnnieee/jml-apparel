@@ -4,7 +4,6 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
 import expoCover from '../assets/expo-title.jpg';
@@ -58,7 +57,7 @@ function Expo() {
     return ( // TODO replace cover image based on size. 
         <Container>
             <img src={expoCover} alt="expo cover image" className="cover" />
-            
+
             <div className={classes.expoHeader}>2020 EVENTS</div>
             <Grid container item spacing={0} justify="center" >
                 {
