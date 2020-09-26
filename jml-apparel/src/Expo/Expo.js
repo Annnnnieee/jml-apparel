@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "lightgrey",
         padding: "50px 100px 30px 20px",
         marginBottom: "10px"
+    },
+    img: {
+        maxHeight: "450px",
+        maxWidth: "450px"
     }
 }));
 
@@ -51,51 +55,47 @@ function Expo() {
             { image: expo2021performanceWinterMunich, title: "Some Title", body: "some description" },
         ]
     const classes = useStyles();
-    return (
+    return ( // TODO replace cover image based on size. 
         <Container>
             <img src={expoCover} alt="expo cover image" className="cover" />
-
-            <div>
-                <div className={classes.expoHeader}>2020 EVENTS</div>
-                <Grid container item spacing={0} justify="center" >
-                    {
-                        events2020.map(event => (
-                            <Grid container xs={12} className={classes.expoItem} >
-                                <Grid item xs={12} sm={6}>
-                                    <img src={event.image} />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <Box>
-                                        <div>{event.title}</div>
-                                    </Box>
-                                </Grid>
-
+            
+            <div className={classes.expoHeader}>2020 EVENTS</div>
+            <Grid container item spacing={0} justify="center" >
+                {
+                    events2020.map(event => (
+                        <Grid container xs={12} className={classes.expoItem} >
+                            <Grid item xs={12} sm={6}>
+                                <img src={event.image} className={classes.img} />
                             </Grid>
-                        ))
-                    }
-                </Grid>
-
-                <div className={classes.expoHeader}>2021 EVENTS</div>
-                <Grid container spacing={0} justify="center">
-                    {
-                        events2021.map(event => (
-                            <Grid container xs={12} className={classes.expoItem} >
-                                <Grid item xs={12} sm={6}>
-                                    <img src={event.image} />
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <Box>
-                                        <div>{event.title}</div>
-                                    </Box>
-                                </Grid>
-
+                            <Grid item xs={12} sm={6}>
+                                <Box>
+                                    <div>{event.title}</div>
+                                </Box>
                             </Grid>
-                        ))
-                    }
 
-                </Grid>
+                        </Grid>
+                    ))
+                }
+            </Grid>
 
-            </div>
+            <div className={classes.expoHeader}>2021 EVENTS</div>
+            <Grid container spacing={0} justify="center">
+                {
+                    events2021.map(event => (
+                        <Grid container xs={12} className={classes.expoItem} >
+                            <Grid item xs={12} sm={6}>
+                                <img src={event.image} />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Box>
+                                    <div>{event.title}</div>
+                                </Box>
+                            </Grid>
+
+                        </Grid>
+                    ))
+                }
+            </Grid>
         </Container>
     );
 }
