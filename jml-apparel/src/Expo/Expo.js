@@ -41,17 +41,17 @@ const useStyles = makeStyles((theme) => ({
 function Expo() {
     const events2020 =
         [
-            { image: expo2020ipso, title: "Some Title", body: "some description" },
-            { image: expo2020PerformanceMunich, title: "Some Title", body: "some description" },
-            { image: expo2020PerformancePortland, title: "Some Title", body: "some description" },
+            { image: expo2020ipso, title: "IPSO", date: "July 2020", location: "Shanghai China" },
+            { image: expo2020PerformanceMunich, title: "Performance Days", date: "November 18-19, 2020", location: "Portland, Oregon, USA"},
+            { image: expo2020PerformancePortland, title: "Performance Days", date: "December 9-10, 2020", location: "Munich, Germany"},
         ]
 
     const events2021 =
         [
-            { image: expo2021ORWinter, title: "Some Title", body: "some description" },
-            { image: expo2021performanceSummerMunich, title: "Some Title", body: "some description" },
-            { image: expo2021ORSummer, title: "Some Title", body: "some description" },
-            { image: expo2021performanceWinterMunich, title: "Some Title", body: "some description" },
+            { image: expo2021ORWinter, title: "Outdoor Retailer", date: "January 27-29, 2021", location: "Denver, Colorado, USA" },
+            { image: expo2021performanceSummerMunich, title: "Performance Days", date: "April 28-29, 2021", location: "Munich, Germany" },
+            { image: expo2021ORSummer, title: "Outdoor Retailer", date: "June 15-17, 2021", location: "Denver, Colorado, USA" },
+            { image: expo2021performanceWinterMunich, title: "Performance Days", date: "November, 2021", location: "Munich, Germany"}, // TODO no date?
         ]
     const classes = useStyles();
     return ( // TODO replace cover image based on size. 
@@ -62,14 +62,16 @@ function Expo() {
             <Grid container item spacing={0} justify="center" >
                 {
                     events2020.map(event => (
-                        <Grid container xs={12} className={classes.expoItem} >
-                            <Grid item xs={12} sm={6}>
+                        <Grid container xs={12} className={classes.expoItem} direction="row" >
+                            <Grid item xs={12} sm={6}> {/* TODO this width is messed up*/}
                                 <img src={event.image} className={classes.img} />
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Box>
+                                <div>
                                     <div>{event.title}</div>
-                                </Box>
+                                    <div>Date: {event.date}</div>
+                                    <div>Location: {event.location}</div>
+                                </div>
                             </Grid>
 
                         </Grid>
@@ -78,17 +80,19 @@ function Expo() {
             </Grid>
 
             <div className={classes.expoHeader}>2021 EVENTS</div>
-            <Grid container spacing={0} justify="center">
+            <Grid container spacing={0} justify="center" direction="row">
                 {
                     events2021.map(event => (
-                        <Grid container xs={12} className={classes.expoItem} >
-                            <Grid item xs={12} sm={6}>
-                                <img src={event.image} />
+                        <Grid container xs={12} className={classes.expoItem} direction="row" >
+                            <Grid item xs={12} sm={6}> {/* TODO this width is messed up*/}
+                                <img src={event.image} className={classes.img} />
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Box>
+                                <div>
                                     <div>{event.title}</div>
-                                </Box>
+                                    <div>Date: {event.date}</div>
+                                    <div>Location: {event.location}</div>
+                                </div>
                             </Grid>
 
                         </Grid>
