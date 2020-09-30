@@ -1,6 +1,7 @@
 import React from 'react';
 import productTitle from '../assets/product-title.jpg'
 import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
 
 import Elastics from '../assets/product-elastics01.jpg';
 import Drawcords from '../assets/product-drawcords01.jpg';
@@ -10,8 +11,22 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 
+const useStyles = makeStyles((theme) => ({
+    item: {
+        display: "flex",
+        flexDirection: "row",
+        backgroundColor: "lightgrey",
+        padding: "50px 100px 30px 20px",
+        marginBottom: "10px"
+    },
+    img: {
+        maxHeight: "450px",
+        maxWidth: "450px"
+    }
+}));
 
 function Product() {
+    const classes = useStyles();
     return (
         <Container>
             <img src={productTitle} alt="product title" />
@@ -27,11 +42,11 @@ function Product() {
             </div>
 
             <div>
-                <Grid container spacing={1} justify="center">
+                <Grid container justify="center">
                     <Grid item xs={12} sm={6} >
-                        <Paper>
+                        <div>
                             <img src={Elastics} alt="elastics" />
-                            <Box>
+                            <div>
                                 <div>Elastics</div>
                                 <ul>
                                     <li>Bra straps</li>
@@ -42,8 +57,8 @@ function Product() {
                                     <li>Biodegradable elasics</li>
                                     <li>Anti-microbial elastics</li>
                                 </ul>
-                            </Box>
-                        </Paper>
+                            </div>
+                        </div>
                     </Grid>
                     <Grid item xs={12} sm={6} >
                         <Paper>
