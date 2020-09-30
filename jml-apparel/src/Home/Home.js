@@ -1,5 +1,7 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
+
+import Cover from './Cover';
 import Digital from './Digital';
 import Product from './Product';
 import Quality from './Quality';
@@ -10,7 +12,7 @@ function Home() {
   return (
     <div>
       <div className="header-section">
-        <div className="carousel"> ---carousel--- </div>
+        <Cover/>
         <div className="header-button">---header button--</div>
       </div>
 
