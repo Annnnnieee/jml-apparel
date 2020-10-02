@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: "10px"
     },
     img: {
-        maxHeight: "450px",
-        maxWidth: "450px"
+        flexShrink: 1,
+        flexGrow: 1
     }
 }));
 

@@ -3,107 +3,155 @@ import productTitle from '../assets/product-title.jpg'
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Elastics from '../assets/product-elastics01.jpg';
-import Drawcords from '../assets/product-drawcords01.jpg';
-import Hangtags from '../assets/product-hangtags01.jpg';
-import Labels from '../assets/product-labels01.jpg';
+import elastics from '../assets/product-elastics01.jpg';
+import drawcords from '../assets/product-drawcords01.jpg';
+import hangtags from '../assets/product-hangtags01.jpg';
+import labels from '../assets/product-labels01.jpg';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
+    root:{
+        overflow: "hidden"
+    },
+    itemContainer: {
+        display: "flex",
+        justifyContent: "space-between",
+        // margin: "-4px",
+    },
     item: {
         display: "flex",
         flexDirection: "row",
+        justifyContent: "space-between",
         backgroundColor: "lightgrey",
-        padding: "50px 100px 30px 20px",
-        marginBottom: "10px"
+        padding: "50px 10px 30px 20px",
+        marginBottom: "10px",
+        flexGrow: 1,
+        flexShrink: 1,
+        },
+    itemImg: {
+        //paddingRight: "20px",
+        // flexShrink: 1,
+        // flexGrow: 1,
     },
-    img: {
-        maxHeight: "450px",
-        maxWidth: "450px"
+    itemDetails: {
+        flexShrink: 1,
+        flexGrow: 1,
     }
 }));
 
 function Product() {
+    const products = [
+        {
+            imgSrc: elastics,
+            description: {
+                title: "Elastics", details: [
+                    "Bra straps",
+                    "Underband and waistband elastics",
+                    "Gripper elastics",
+                    "Mesh",
+                    "Recycled elastics",
+                    "Biodegradable elasics",
+                    "Anti-microbial elastics"
+                ]
+            }
+        },
+        {
+            imgSrc: drawcords,
+            description: {
+                title: "Drawcords", details: [
+                    "Metal tipped",
+                    "TPU tipped",
+                    "ABS tipped",
+                    "Specialty tips",
+                    "Stretch",
+                    "Non-stretch"
+                ]
+            }
+        },
+        {
+            imgSrc: hangtags,
+            description: {
+                title: "Hangtags", details: [
+                    "Paper hangtag",
+                    "Paper packaging",
+                    "Shopping bags"
+                ]
+            }
+        },
+        {
+            imgSrc: labels,
+            description: {
+                title: "Labels", details: [
+                    "Woven Labels",
+                    "Print Labels"
+                ]
+            }
+        }
+
+    ]
     const classes = useStyles();
     return (
-        <Container>
+        <div className={classes.root}>
             <img src={productTitle} alt="product title" />
             <div>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget lectus accumsan, tincidunt libero non, imperdiet ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tempor, felis eu pharetra egestas, arcu dui elementum metus, et ullamcorper erat turpis eget lectus. Nulla facilisi. Vestibulum augue lorem, pulvinar ut dapibus vitae, scelerisque sed risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis sagittis fermentum. Aenean quis ante sed diam tincidunt efficitur id et neque. </p>
-                <p>Pellentesque at odio erat. Sed ac blandit odio, eget pharetra arcu.</p>
+                <p>From labels and hangtags to elastics and tape, we supply hundreds of
+                new and innovative garment trims to enhance your fashion wear.
+                We work hard to be on top of the latest trends and to create the kind
+                of stylish, comfortable and practical clothing trims you demand
+                </p>
 
-                <p>Cras tempus odio velit, sed ullamcorper massa consectetur nec. Aenean maximus dui vel vulputate malesuada. Morbi volutpat laoreet velit. Fusce vel tellus vitae purus dignissim facilisis. Ut ac quam vel dui venenatis semper eget vel turpis. Nullam euismod, magna a aliquet accumsan, urna elit ultrices nibh, quis facilisis est ex sit amet sem. Donec eget velit fermentum, elementum velit eget, tempor sapien. Curabitur aliquam posuere auctor. Sed dapibus vehicula lectus, eu scelerisque lorem. Suspendisse dictum elit ac ultrices feugiat. Integer aliquam tristique tellus a feugiat. Donec non diam a dolor posuere viverra. Nulla vel venenatis ipsum. Suspendisse fringilla erat in porta pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus laoreet ante, eu accumsan urna scelerisque at. </p>
+                <p>
+                    Count on us for forward-thinking apparel solutions to help you create
+                    distinctive quality garments.
+                </p>
 
-                <p>Ut dictum pellentesque felis, sed malesuada lacus laoreet id. Proin quis accumsan tortor. Quisque eleifend diam sit amet nisi imperdiet euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam imperdiet pellentesque velit eu pretium. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc gravida, risus vel interdum pellentesque, massa tellus maximus elit, a tempor mauris quam at velit. Donec convallis eros et accumsan porta. Duis id velit et metus dapibus tempor eget sit amet velit. Nullam pharetra congue eros, eu luctus elit vehicula quis. Etiam in ullamcorper purus, convallis suscipit sapien. Nam elementum velit in ipsum malesuada semper. Aliquam id mi vitae sem porttitor malesuada sed vel orci.</p>
+                <p>
+                    We understand the importance of detail in your garment design process.
+                    At JML, we are committed to supporting you in meeting and exceeding your
+                    expectations. We take pride in our research and development, comprehensive
+                    knowledge of the industry and close relationsihp with our material suppliers
+                    as well as our reputation for efficiency and quick turn around.
+                </p>
 
-                <p>Sed viverra quam eget ante semper faucibus. Aenean tempor sollicitudin vulputate. Suspendisse mollis sem eget est placerat, eu faucibus velit convallis. Vestibulum aliquet aliquam arcu, sit amet sodales urna elementum eu. Aenean ac lorem lacinia, vulputate mi quis, interdum metus. Cras accumsan, sem ut venenatis dictum, metus tellus bibendum libero, non consequat eros arcu vitae metus. Nunc vestibulum risus in libero faucibus maximus. Ut ullamcorper leo lacus, tincidunt ornare turpis egestas ut. Morbi sed nunc quis metus suscipit malesuada quis quis massa. Nulla feugiat magna in lectus porttitor, vitae blandit dolor mollis.</p>
+                <p>
+                    Our designers are constantly updating both the look and the construction
+                    of our clothing trims to match your own merchanidise. We adhere to the
+                    highest QC procedures and guarantee quality finished items.
+                </p>
+
+                <ul>
+                    <li>Our factories are ISO 9001:2000 certified</li>
+                    <li>All our products meet Oeko-Tex Standard 100 test criteria</li>
+                    <li>Our labs are ITS accredited and can conduct tests according to ISO,
+                        AATCC and JIS standards</li>
+                </ul>
             </div>
 
             <div>
-                <Grid container justify="center">
-                    <Grid item xs={12} sm={6} >
-                        <div>
-                            <img src={Elastics} alt="elastics" />
-                            <div>
-                                <div>Elastics</div>
-                                <ul>
-                                    <li>Bra straps</li>
-                                    <li>Underband and waistband elastics</li>
-                                    <li>Gripper elastics</li>
-                                    <li>Mesh</li>
-                                    <li>Recycled elastics</li>
-                                    <li>Biodegradable elasics</li>
-                                    <li>Anti-microbial elastics</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} >
-                        <Paper>
-                            <img src={Drawcords} />
-                            <Box>
-                            <div>Drawcords</div>
-                            <ul>
-                                <li>Metal tipped</li>
-                                <li>TPU tipped</li>
-                                <li>ABS tipped</li>
-                                <li>Specialty tips</li>
-                                <li>Stretch</li>
-                                <li>Non-stretch</li>
-                            </ul>
-                            </Box>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <Paper>
-                            <img src={Hangtags} alt="hangtags" />
-                            <Box>
-                            <div>Hangtags</div>
-                            <ul>
-                                <li>Paper hangtag</li>
-                                <li>Paper packaging</li>
-                                <li>Shopping bags</li>
-                            </ul>
-                            </Box>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={12} sm={6} >
-                        <Paper>
-                            <img src={Labels} alt="labels" />
-                            <Box>
-                            <div>Labels</div>
-                            <ul>
-                                <li>Woven Labels</li>
-                                <li>Print Labels</li>
-                            </ul>
-                            </Box>
-                        </Paper>
-                    </Grid>
+
+                <Grid container spacing={1} className={classes.itemContainer} >
+                    {
+                        products.map(product => (
+                            <Grid container xs={12} sm={6} spacing={1} className={classes.item} direction="row" >
+                                <Grid item xs={12} sm={6} spacing={1} className={classes.itemImg}> 
+                                    <img src={product.imgSrc} />
+                                </Grid>
+                                <Grid item xs={12} sm={6} spacing={1}>
+                                    <div>
+                                        <div>{product.description.title}</div>
+                                        {product.description.details.map(detail=> (
+                                            <li>{detail}</li>
+                                        ))}
+                                    </div>
+                                </Grid>
+                            </Grid>
+                        ))
+                    }
                 </Grid>
             </div>
-        </Container>
+        </div>
     );
 }
 
