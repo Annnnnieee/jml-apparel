@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     introContainer: {
         maxWidth: "90%",
         margin: "auto",
+        marginBottom: "15px",
     },
     itemContainer: {
         display: "flex",
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
         textTransform: "uppercase",
         marginBottom: "10px",
         [theme.breakpoints.down('sm')]: {
-            fontSize: '5vw',
+            fontSize: '6vw',
         },
     },
     itemList: {
@@ -75,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
         listStylePosition: "inside",
         padding: "0",
         [theme.breakpoints.down('sm')]: {
-            fontSize: '3vw',
+            fontSize: '5vw',
         },
     },
 
