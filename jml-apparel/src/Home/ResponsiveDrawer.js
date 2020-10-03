@@ -17,6 +17,8 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import { Link as RouterLink } from 'react-router-dom';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,16 +40,28 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: "100%"
   },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(1),
-  },
   title: {
     flexGrow: 1,
     justifyContent: "left",
   },
 }));
 
+
+function ElevationScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
 
 function ListItemLink(props) {
   const { primary, to } = props;
@@ -103,33 +117,35 @@ function ResponsiveDrawer() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <div className={classes.title} >
-            <Button color="inherit" component={RouterLink} to="/">JML</Button>
-          </div>
+      <ElevationScroll >
+        <AppBar position="fixed" className={classes.appBar}>
+          <Toolbar>
+            <div className={classes.title} >
+              <Button color="inherit" component={RouterLink} to="/">JML</Button>
+            </div>
 
 
-          <Hidden xsDown>
-            <Button color="inherit" component={RouterLink} to="/product">Product</Button>
-            <Button color="inherit" component={RouterLink} to="/digital">Digital</Button>
-            <Button color="inherit" component={RouterLink} to="/quality-and-sustainability">Quality and Sustainability</Button>
-            <Button color="inherit" component={RouterLink} to="/expo-and-conference">Expo and Conference</Button>
-            <Button color="inherit" component={RouterLink} to="/about-us">About Us</Button>
-            <Button color="inherit" component={RouterLink} to="/contact-us">Contact Us</Button>
-          </Hidden>
+            <Hidden xsDown>
+              <Button color="inherit" component={RouterLink} to="/product">Product</Button>
+              <Button color="inherit" component={RouterLink} to="/digital">Digital</Button>
+              <Button color="inherit" component={RouterLink} to="/quality-and-sustainability">Quality and Sustainability</Button>
+              <Button color="inherit" component={RouterLink} to="/expo-and-conference">Expo and Conference</Button>
+              <Button color="inherit" component={RouterLink} to="/about-us">About Us</Button>
+              <Button color="inherit" component={RouterLink} to="/contact-us">Contact Us</Button>
+            </Hidden>
 
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              className={classes.menuButton}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
       {/* The implementation can be swapped with js to avoid SEO duplication of links. do we even need css */}
       <Hidden smUp implementation="css">
         <Drawer
@@ -148,10 +164,7 @@ function ResponsiveDrawer() {
           {drawer}
         </Drawer>
       </Hidden>
-
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-      </main>
+      <Toolbar />
     </div>
   );
 }
