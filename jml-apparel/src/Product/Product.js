@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         overflow: "hidden",
-        fontFamily: "HelveticaNeue",
+        // fontFamily: "HelveticaNeue",
         color: "#000000",
         color: "rgb(0, 0, 0)",
         flexDirection: "column",
@@ -27,14 +27,13 @@ const useStyles = makeStyles((theme) => ({
     itemContainer: {
         display: "flex",
         justifyContent: "space-between",
-        // margin: "-4px",
     },
     item: {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        background : "rgba(194, 194, 194, 0.2)",
-        padding: "2% 3% 2% 3%",
+        background: "rgba(194, 194, 194, 0.2)",
+        padding: "2% 3% 2% 5%",
         marginBottom: "10px",
         flexGrow: 1,
         flexShrink: 1,
@@ -42,24 +41,42 @@ const useStyles = makeStyles((theme) => ({
     itemImg: {
         width: "83%",
         height: "83%",
+        [theme.breakpoints.down('sm')]: {
+            width: "83%",
+            height: "auto",
+        },
     },
     description: {
-        // fontSize: "3.375rem",
         fontSize: "2.0vw",
         maxWidth: "90%",
-
+        marginBottom: "3%",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '4vw',
+            maxWidth: "100%",
+            marginBottom: "7%",
+        },
+    },
+    descriptionList: {
+        margin: "0",
+        listStylePosition: "inside",
+        padding: "0",
     },
     itemTitle: {
-        // fontSize: "3rem",
         fontSize: "2.22vw",
         textTransform: "uppercase",
+        marginBottom: "10px",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '5vw',
+        },
     },
     itemList: {
-        // fontSize: "2.25rem",
         fontSize: "1.6vw",
         margin: "0",
         listStylePosition: "inside",
         padding: "0",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '3vw',
+        },
     },
 
 }));
@@ -145,7 +162,7 @@ function Product() {
                         highest QC procedures and guarantee quality finished items.
                 </p>
 
-                    <ul>
+                    <ul className={classes.descriptionList}>
                         <li>Our factories are ISO 9001:2000 certified</li>
                         <li>All our products meet Oeko-Tex Standard 100 test criteria</li>
                         <li>Our labs are ITS accredited and can conduct tests according to ISO,
