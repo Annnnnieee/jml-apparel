@@ -18,22 +18,60 @@ import { useTheme } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        display: "flex",
+        overflow: "hidden",
+        // fontFamily: "HelveticaNeue",
+        color: "#000000",
+        color: "rgb(0, 0, 0)",
+        flexDirection: "column",
+    },
+    introContainer: {
+        maxWidth: "90%",
+        margin: "auto",
+        marginBottom: "15px",
+    },
     expoHeader: {
-        backgroundColor: "grey",
+        backgroundColor: "#484848",
         paddingTop: "10px",
         paddingBottom: "10px",
-        textAlign: "center"
+        textAlign: "center",
+        fontSize: "2.2vw",
+        color: "white",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '6vw',
+        },
     },
     expoItem: {
         display: "flex",
         flexDirection: "row",
         backgroundColor: "lightgrey",
-        padding: "50px 100px 30px 20px",
-        marginBottom: "10px"
+        padding: "5% 5% 5% 5%",
+        marginBottom: "15px",
+        fontSize: "2.22vw",
+        marginBottom: "10px",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '5vw',
+        },
+    },
+    expoDescription: {
+        [theme.breakpoints.up('md')]: {
+            paddingLeft: "20px",
+        },
+    },
+    itemTitle: {
+        fontSize: "2.22vw",
+        marginBottom: "7px",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '6vw',
+        },
     },
     img: {
-        flexShrink: 1,
-        flexGrow: 1
+        [theme.breakpoints.down('sm')]: {
+            marginBottom: "15px",
+        },
+        // width: "30%",
+        // height: "30%",
     }
 }));
 
@@ -41,8 +79,8 @@ function Expo() {
     const events2020 =
         [
             { image: expo2020ipso, title: "IPSO", date: "July 2020", location: "Shanghai China" },
-            { image: expo2020PerformanceMunich, title: "Performance Days", date: "November 18-19, 2020", location: "Portland, Oregon, USA"},
-            { image: expo2020PerformancePortland, title: "Performance Days", date: "December 9-10, 2020", location: "Munich, Germany"},
+            { image: expo2020PerformanceMunich, title: "Performance Days", date: "November 18-19, 2020", location: "Portland, Oregon, USA" },
+            { image: expo2020PerformancePortland, title: "Performance Days", date: "December 9-10, 2020", location: "Munich, Germany" },
         ]
 
     const events2021 =
@@ -50,24 +88,26 @@ function Expo() {
             { image: expo2021ORWinter, title: "Outdoor Retailer", date: "January 27-29, 2021", location: "Denver, Colorado, USA" },
             { image: expo2021performanceSummerMunich, title: "Performance Days", date: "April 28-29, 2021", location: "Munich, Germany" },
             { image: expo2021ORSummer, title: "Outdoor Retailer", date: "June 15-17, 2021", location: "Denver, Colorado, USA" },
-            { image: expo2021performanceWinterMunich, title: "Performance Days", date: "November, 2021", location: "Munich, Germany"}, // TODO no date?
+            { image: expo2021performanceWinterMunich, title: "Performance Days", date: "November, 2021", location: "Munich, Germany" }, // TODO no date?
         ]
     const classes = useStyles();
-    return ( // TODO replace cover image based on size. 
-        <Container>
-            <img src={expoCover} alt="expo cover image" className="cover" />
+    return ( // TODO repl{ace cover image based on size. 
+        <div classesName={classes.root}>
+            <div className={classes.introContainer}>
+                <img src={expoCover} alt="expo cover image" className="cover" />
+            </div>
 
             <div className={classes.expoHeader}>2020 EVENTS</div>
             <Grid container item spacing={0} justify="center" >
                 {
                     events2020.map(event => (
                         <Grid container xs={12} className={classes.expoItem} direction="row" >
-                            <Grid item xs={12} sm={6}> {/* TODO this width is messed up*/}
+                            <Grid item xs={12} sm={2}> {/* TODO this width is messed up*/}
                                 <img src={event.image} className={classes.img} />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={12} sm={6} className={classes.expoDescription}>
                                 <div>
-                                    <div>{event.title}</div>
+                                    <div className={classes.itemTitle}>{event.title}</div>
                                     <div>Date: {event.date}</div>
                                     <div>Location: {event.location}</div>
                                 </div>
@@ -83,12 +123,12 @@ function Expo() {
                 {
                     events2021.map(event => (
                         <Grid container xs={12} className={classes.expoItem} direction="row" >
-                            <Grid item xs={12} sm={6}> {/* TODO this width is messed up*/}
+                            <Grid item xs={12} sm={2}> {/* TODO this width is messed up*/}
                                 <img src={event.image} className={classes.img} />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid item xs={12} sm={6} className={classes.expoDescription}>
                                 <div>
-                                    <div>{event.title}</div>
+                                    <div className={classes.itemTitle}>{event.title}</div>
                                     <div>Date: {event.date}</div>
                                     <div>Location: {event.location}</div>
                                 </div>
@@ -98,7 +138,7 @@ function Expo() {
                     ))
                 }
             </Grid>
-        </Container>
+        </div>
     );
 }
 

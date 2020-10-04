@@ -34,16 +34,14 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "row",
         justifyContent: "space-between",
         background: "rgba(194, 194, 194, 0.2)",
-        padding: "2% 3% 2% 5%",
+        padding: "5% 5% 2% 5%",
         marginBottom: "10px",
-        flexGrow: 1,
-        flexShrink: 1,
     },
     itemImg: {
         width: "83%",
         height: "83%",
         [theme.breakpoints.down('sm')]: {
-            width: "83%",
+            width: "auto",
             height: "auto",
         },
     },
@@ -177,10 +175,10 @@ function Product() {
                     {
                         products.map(product => (
                             <Grid container xs={12} sm={6} spacing={1} className={classes.item} direction="row" >
-                                <Grid item xs={12} sm={6} spacing={1} className={classes.itemImg}>
+                                <Grid item xs={12} sm={6} className={classes.itemImg}>
                                     <img src={product.imgSrc} />
                                 </Grid>
-                                <Grid item xs={12} sm={6} spacing={1}>
+                                <Grid item xs={12} sm={6} >
                                     <div>
                                         <div className={classes.itemTitle}>{product.description.title}</div>
                                         <ul className={classes.itemList}>

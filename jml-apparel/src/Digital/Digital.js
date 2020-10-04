@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     },
     item: {
         background: "rgba(194, 194, 194, 0.2)",
-        padding: "2% 3% 2% 5%",
+        padding: "2% 3% 2% 5%", // TODO fix this. 55 2 5
         marginBottom: "10px",
         flexGrow: 1,
         flexShrink: 1,

@@ -13,7 +13,6 @@ function Home() {
     <div>
       <div className="header-section">
         <Cover/>
-        <div className="header-button">---header button--</div>
       </div>
 
       <Product />
