@@ -8,6 +8,7 @@ import drawcords from '../assets/product-drawcords01.jpg';
 import hangtags from '../assets/product-hangtags01.jpg';
 import labels from '../assets/product-labels01.jpg';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         overflow: "hidden",
-        // fontFamily: "HelveticaNeue",
+        //fontFamily: "Myriad Pro",
         color: "#000000",
         color: "rgb(0, 0, 0)",
         flexDirection: "column",
@@ -46,11 +47,11 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     description: {
-        fontSize: "2.0vw",
+        // fontSize: "2.0vw",
         maxWidth: "90%",
         marginBottom: "3%",
         [theme.breakpoints.down('sm')]: {
-            fontSize: '4vw',
+            //   fontSize: '4vw',
             maxWidth: "100%",
             marginBottom: "7%",
         },
@@ -61,21 +62,21 @@ const useStyles = makeStyles((theme) => ({
         padding: "0",
     },
     itemTitle: {
-        fontSize: "2.22vw",
+        // fontSize: "2.22vw",
         textTransform: "uppercase",
         marginBottom: "10px",
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '6vw',
-        },
+        // [theme.breakpoints.down('sm')]: {
+        //     fontSize: '6vw',
+        // },
     },
     itemList: {
-        fontSize: "1.6vw",
+        // fontSize: "1.6vw",
         margin: "0",
         listStylePosition: "inside",
         padding: "0",
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '5vw',
-        },
+        // [theme.breakpoints.down('sm')]: {
+        //     fontSize: '5vw',
+        // },
     },
 
 }));
@@ -136,37 +137,32 @@ function Product() {
             <div className={classes.introContainer}>
                 <img src={productTitle} alt="product cover image" />
                 <div className={classes.description}>
-                    <p>From labels and hangtags to elastics and tape, we supply hundreds of
-                    new and innovative garment trims to enhance your fashion wear.
-                    We work hard to be on top of the latest trends and to create the kind
-                    of stylish, comfortable and practical clothing trims you demand
-                </p>
+                    <Typography variant="body1">
+                        <p> From labels and hangtags to elastics and tape, we supply hundreds of
+                        new and innovative garment trims to enhance your fashion wear.
+                        We work hard to be on top of the latest trends and to create the kind
+                            of stylish, comfortable and practical clothing trims you demand</p>
 
-                    <p>
-                        Count on us for forward-thinking apparel solutions to help you create
-                        distinctive quality garments.
-                </p>
+                        <p> Count on us for forward-thinking apparel solutions to help you create
+                            distinctive quality garments.</p>
 
-                    <p>
-                        We understand the importance of detail in your garment design process.
+                        <p> We understand the importance of detail in your garment design process.
                         At JML, we are committed to supporting you in meeting and exceeding your
                         expectations. We take pride in our research and development, comprehensive
                         knowledge of the industry and close relationship with our material suppliers
-                        as well as our reputation for efficiency and quick turn around.
-                </p>
+                            as well as our reputation for efficiency and quick turn around.</p>
 
-                    <p>
-                        Our designers are constantly updating both the look and the construction
+                        <p> Our designers are constantly updating both the look and the construction
                         of our clothing trims to match your own merchanidise. We adhere to the
-                        highest QC procedures and guarantee quality finished items.
-                </p>
+                            highest QC procedures and guarantee quality finished items.</p>
 
-                    <ul className={classes.descriptionList}>
-                        <li>Our factories are ISO 9001:2000 certified</li>
-                        <li>All our products meet Oeko-Tex Standard 100 test criteria</li>
-                        <li>Our labs are ITS accredited and can conduct tests according to ISO,
-                        AATCC and JIS standards</li>
-                    </ul>
+                        <ul className={classes.descriptionList}>
+                            <li>Our factories are ISO 9001:2000 certified</li>
+                            <li>All our products meet Oeko-Tex Standard 100 test criteria</li>
+                            <li>Our labs are ITS accredited and can conduct tests according to ISO,
+                                AATCC and JIS standards</li>
+                        </ul>
+                    </Typography>
                 </div>
             </div>
 
@@ -180,12 +176,14 @@ function Product() {
                                 </Grid>
                                 <Grid item xs={12} sm={6} >
                                     <div>
-                                        <div className={classes.itemTitle}>{product.description.title}</div>
-                                        <ul className={classes.itemList}>
-                                            {product.description.details.map(detail => (
-                                                <li >{detail}</li>
-                                            ))}
-                                        </ul>
+                                        <Typography variant="h2"><div className={classes.itemTitle}>{product.description.title}</div> </Typography>
+                                        <Typography variant="body2">
+                                            <ul className={classes.itemList}>
+                                                {product.description.details.map(detail => (
+                                                    <li >{detail}</li>
+                                                ))}
+                                            </ul>
+                                        </Typography>
                                     </div>
                                 </Grid>
                             </Grid>

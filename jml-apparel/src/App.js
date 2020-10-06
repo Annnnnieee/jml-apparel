@@ -14,12 +14,59 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { MuiThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme, MuiThemeProvider, ThemeProvider } from "@material-ui/core/styles";
 import ResponsiveDrawer from './Home/ResponsiveDrawer';
 
 function App() {
+  const theme = createMuiTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 640,
+        md: 1000,
+        lg: 1280,
+        xl: 1920,
+      },
+    },
+    typography: {
+      htmlFontSize: 10,
+    }
+  });
+
+  theme.typography.h1 = {
+    fontSize: "6.125rem",
+    [theme.breakpoints.only('sm')]: {
+      fontSize: '30px',
+    },
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '30px',
+    },
+  }
+
+  theme.typography.body1 = {
+    fontSize: "1.2rem",
+    [theme.breakpoints.only('sm')]: {
+      fontSize: '1rem',
+    },
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '0.7rem',
+    },
+  }
+
+  theme.typography.h2 = {
+    fontSize: "1.3rem",
+    [theme.breakpoints.only('sm')]: {
+      fontSize: '1.2rem',
+    },
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '0.8rem',
+    },
+  }
+
+  theme.typography.body2 = theme.typography.body1;
+  
   return (
-    <MuiThemeProvider >
+    <ThemeProvider theme={theme}>
       <Router>
         <ResponsiveDrawer />
         <Switch>
@@ -48,7 +95,7 @@ function App() {
         <Footer />
       </Router>
 
-    </MuiThemeProvider>
+    </ThemeProvider>
 
   );
 }
