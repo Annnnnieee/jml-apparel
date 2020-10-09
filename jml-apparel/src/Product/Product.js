@@ -16,17 +16,22 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         overflow: "hidden",
-        //fontFamily: "Myriad Pro",
-        color: "#000000",
-        color: "rgb(0, 0, 0)",
         flexDirection: "column",
     },
-    introContainer: {
+    introductionContainer: {
         maxWidth: "90%",
         margin: "auto",
         marginBottom: "15px",
     },
-    itemContainer: {
+    introduction: {
+        maxWidth: "90%",
+        marginBottom: "3%",
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: "100%",
+            marginBottom: "7%",
+        },
+    },
+    itemsContainer: {
         display: "flex",
         justifyContent: "space-between",
     },
@@ -35,48 +40,23 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "row",
         justifyContent: "space-between",
         background: "rgba(194, 194, 194, 0.2)",
-        padding: "5% 5% 2% 5%",
+        padding: "5% 5% 2% 5%", // TODO needs to change based on the size. 
         marginBottom: "10px",
     },
-    itemImg: {
-        width: "83%",
-        height: "83%",
-        [theme.breakpoints.down('sm')]: {
-            width: "auto",
-            height: "auto",
-        },
+    itemImage:{
+        padding: "2% 2% 2% 2%",
     },
-    description: {
-        // fontSize: "2.0vw",
-        maxWidth: "90%",
-        marginBottom: "3%",
-        [theme.breakpoints.down('sm')]: {
-            //   fontSize: '4vw',
-            maxWidth: "100%",
-            marginBottom: "7%",
-        },
-    },
-    descriptionList: {
-        margin: "0",
-        listStylePosition: "inside",
-        padding: "0",
+    itemDescription: {
+        paddingLeft: "10%",
     },
     itemTitle: {
-        // fontSize: "2.22vw",
         textTransform: "uppercase",
         marginBottom: "10px",
-        // [theme.breakpoints.down('sm')]: {
-        //     fontSize: '6vw',
-        // },
     },
     itemList: {
-        // fontSize: "1.6vw",
         margin: "0",
         listStylePosition: "inside",
         padding: "0",
-        // [theme.breakpoints.down('sm')]: {
-        //     fontSize: '5vw',
-        // },
     },
 
 }));
@@ -134,9 +114,9 @@ function Product() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <div className={classes.introContainer}>
+            <div className={classes.introductionContainer}>
                 <img src={productTitle} alt="product cover image" />
-                <div className={classes.description}>
+                <div className={classes.introduction}>
                     <Typography variant="body1">
                         <p> From labels and hangtags to elastics and tape, we supply hundreds of
                         new and innovative garment trims to enhance your fashion wear.
@@ -167,14 +147,14 @@ function Product() {
             </div>
 
             <div>
-                <Grid container spacing={1} className={classes.itemContainer} >
+                <Grid container spacing={1} className={classes.itemsContainer} >
                     {
                         products.map(product => (
-                            <Grid container xs={12} sm={6} spacing={1} className={classes.item} direction="row" >
-                                <Grid item xs={12} sm={6} className={classes.itemImg}>
+                            <Grid container xs={12} sm={6} className={classes.item} direction="row" >
+                                <Grid item xs={5} sm={5} className={classes.itemImg}>
                                     <img src={product.imgSrc} />
                                 </Grid>
-                                <Grid item xs={12} sm={6} >
+                                <Grid item xs={7} sm={7} className={classes.itemDescription} >
                                     <div>
                                         <Typography variant="h2"><div className={classes.itemTitle}>{product.description.title}</div> </Typography>
                                         <Typography variant="body2">
