@@ -52,10 +52,18 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     itemImage: {
+        [theme.breakpoints.only('sm')]: {
+           paddingRight: "20px",
+         },
+        [theme.breakpoints.up('md')]: {
+           width: "80%",
+           height: "80%",
+        },
     },
     itemDetail: {
-        paddingLeft: "2rem",
-        [theme.breakpoints.down('sm')]: {
+        //paddingLeft: "2rem",
+        minHeight: "18vh",
+        [theme.breakpoints.down('xs')]: {
             paddingLeft: "1rem",
             minHeight: "0px"
         },
@@ -172,20 +180,20 @@ function Product(props) {
 
             <div style={{ padding: 0 }}>
 
-                <Grid container className={classes.itemsContainer} justify="space-between" alignItems="stretch">
+                <Grid container className={classes.itemsContainer} justify="space-between"  >
                     {
                         products.map(product => (
-                            <Grid container item xs={12} sm={6} spacing={1} className={classes.item} alignItems="stretch">
-                                    <Grid item xs={12} sm={4} className={classes.itemImage}>
-                                        <img src={product.imgSrc} />
+                            <Grid container item xs={12} sm={6} spacing={1} className={classes.item} justify="space-between">
+                                    <Grid item xs={12} sm={5} md={6} >
+                                        <img src={product.imgSrc} className={classes.itemImage} />
                                     </Grid>
-                                    <Grid item xs={12} sm={8} >
+                                    <Grid item xs={12} sm={7} md={6} >
                                         <div className={classes.itemDetail}>
                                             <Typography variant="h2"><div className={classes.itemDetailTitle}>{product.description.title}</div> </Typography>
                                             <Typography variant="body2">
                                                 <ul className={classes.itemDetailList}>
                                                     {product.description.details.map(detail => (
-                                                        <li style={{textIndent: "2px"}}>{detail}</li>
+                                                        <li>{detail}</li>
                                                     ))}
                                                 </ul>
                                             </Typography>

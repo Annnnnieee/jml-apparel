@@ -3,13 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import WebFont from 'webfontloader'; // TODO do we need this? don't forget to uninstall if not
-
-WebFont.load({
-  google: {
-    families: ['Titillium Web:300,400,700', 'sans-serif']
-  }
-});
+// todo uninstall webfontloader
 
 ReactDOM.render(
   <React.StrictMode>

@@ -30,10 +30,12 @@ function App() {
     },
     typography: {
       htmlFontSize: 10,
+      fontFamily: "'Work Sans', sans-serif",
     }
   });
 
   theme.typography.h1 = {
+    fontFamily: "'Work Sans', sans-serif",
     fontSize: "6.125rem",
     [theme.breakpoints.only('sm')]: {
       fontSize: '30px',
@@ -45,6 +47,7 @@ function App() {
 
   theme.typography.body1 = {
     fontSize: "1.2rem",
+    fontFamily: "'Work Sans', sans-serif",
     [theme.breakpoints.only('sm')]: {
       fontSize: '1rem',
     },
@@ -54,6 +57,7 @@ function App() {
   }
 
   theme.typography.h2 = {
+    fontFamily: "'Work Sans', sans-serif",
     fontSize: "1.3rem",
     [theme.breakpoints.only('sm')]: {
       fontSize: '1.2rem',

@@ -4,6 +4,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 import expoCover from '../assets/expo-title.jpg';
 import expoCoverAlt from '../assets/expo-alt-title.jpg';
@@ -20,10 +21,6 @@ import { useTheme } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
-        overflow: "hidden",
-        // fontFamily: "HelveticaNeue",
-        color: "#000000",
-        color: "rgb(0, 0, 0)",
         flexDirection: "column",
     },
     introContainer: {
@@ -36,42 +33,47 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "10px",
         paddingBottom: "10px",
         textAlign: "center",
-        fontSize: "2.2vw",
         color: "white",
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '6vw',
-        },
     },
     expoItem: {
         display: "flex",
         flexDirection: "row",
         backgroundColor: "lightgrey",
-        padding: "5% 5% 5% 5%",
+        padding: "3% 3% 3% 3%",
         marginBottom: "15px",
-        fontSize: "2.22vw",
         marginBottom: "10px",
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '5vw',
+        [theme.breakpoints.down('xs')]: {
+            padding: "3% 3% 3% 3%",
         },
     },
     expoDescription: {
-        [theme.breakpoints.up('md')]: {
-            paddingLeft: "20px",
-        },
     },
     itemTitle: {
-        fontSize: "2.22vw",
         marginBottom: "7px",
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '6vw',
-        },
+        marginTop: "15px",
     },
-    img: {
-        [theme.breakpoints.down('sm')]: {
-            marginBottom: "15px",
+    imgContainer: {
+        display: "block",
+        maxWidth: "15rem",
+        height: "auto",
+        overflow: "none",
+        [theme.breakpoints.up('sm')]: {
+            paddingRight: "3%"
+         },
+        [theme.breakpoints.down('xs')]: {
+            display: "block",
+            verticalAlign: "bottom",
+            lineHeight: 0,
+            overflow: "hidden",
+            maxWidth: "100%",
+            height: "auto",
+            marginBottom: "0px auto 15px",
         },
-        // width: "30%",
-        // height: "30%",
+    img: {
+        [theme.breakpoints.up('sm')]: {
+           paddingRight: "3%"
+        },
+    }
     }
 }));
 
@@ -97,19 +99,19 @@ function Expo() {
                 <img src={expoCover} alt="expo cover image" className="cover" />
             </div>
 
-            <div className={classes.expoHeader}>2020 EVENTS</div>
-            <Grid container item spacing={0} justify="center" >
+            <Typography variant="h2" className={classes.expoHeader}>2020 EVENTS</Typography>
+            <Grid container spacing={0} justify="center" >
                 {
                     events2020.map(event => (
-                        <Grid container xs={12} className={classes.expoItem} direction="row" >
-                            <Grid item xs={12} sm={2}> {/* TODO this width is messed up*/}
-                                <img src={event.image} className={classes.img} />
+                        <Grid container item xs={12} className={classes.expoItem} direction="row" >
+                            <Grid item xs={12} sm={5} className={classes.imgContainer}> {/* TODO this width is messed up*/}
+                                <img src={event.image} />
                             </Grid>
-                            <Grid item xs={12} sm={6} className={classes.expoDescription}>
+                            <Grid item xs={12} sm={7} className={classes.expoDescription}>
                                 <div>
-                                    <div className={classes.itemTitle}>{event.title}</div>
-                                    <div>Date: {event.date}</div>
-                                    <div>Location: {event.location}</div>
+                                    <Typography variant="h2" className={classes.itemTitle}>{event.title}</Typography>
+                                    <Typography variant="h2">Date: {event.date}</Typography>
+                                    <Typography variant="h2">Location: {event.location}</Typography>
                                 </div>
                             </Grid>
 
@@ -118,19 +120,19 @@ function Expo() {
                 }
             </Grid>
 
-            <div className={classes.expoHeader}>2021 EVENTS</div>
+            <Typography variant="h2" className={classes.expoHeader}>2021 EVENTS</Typography>
             <Grid container spacing={0} justify="center" direction="row">
                 {
                     events2021.map(event => (
                         <Grid container xs={12} className={classes.expoItem} direction="row" >
-                            <Grid item xs={12} sm={2}> {/* TODO this width is messed up*/}
-                                <img src={event.image} className={classes.img} />
+                            <Grid item xs={12} sm={3}  className={classes.imgContainer}> 
+                                <img src={event.image} />
                             </Grid>
-                            <Grid item xs={12} sm={6} className={classes.expoDescription}>
+                            <Grid item xs={12} sm={7} className={classes.expoDescription}>
                                 <div>
-                                    <div className={classes.itemTitle}>{event.title}</div>
-                                    <div>Date: {event.date}</div>
-                                    <div>Location: {event.location}</div>
+                                    <Typography variant="h2" className={classes.itemTitle}>{event.title}</Typography>
+                                    <Typography variant="h2">Date: {event.date}</Typography>
+                                    <Typography variant="h2">Location: {event.location}</Typography>
                                 </div>
                             </Grid>
 
