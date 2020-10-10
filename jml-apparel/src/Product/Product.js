@@ -168,7 +168,7 @@ function Product(props) {
                         of our clothing trims to match your own merchanidise. We adhere to the
                             highest QC procedures and guarantee quality finished items.</p>
 
-                        <ul className={classes.descriptionList}>
+                        <ul>
                             <li>Our factories are ISO 9001:2000 certified</li>
                             <li>All our products meet Oeko-Tex Standard 100 test criteria</li>
                             <li>Our labs are ITS accredited and can conduct tests according to ISO,
