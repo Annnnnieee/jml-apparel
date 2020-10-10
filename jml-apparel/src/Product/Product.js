@@ -2,6 +2,8 @@ import React from 'react';
 import productTitle from '../assets/product-title.jpg'
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+
 
 import elastics from '../assets/product-elastics01.jpg';
 import drawcords from '../assets/product-drawcords01.jpg';
@@ -32,28 +34,37 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     itemsContainer: {
-        display: "flex",
-        justifyContent: "space-between",
+        // display: "flex",
+        // justifyContent: "center",
     },
     item: {
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
+        flexGrow: 1,
+       //  margin: "auto",
         background: "rgba(194, 194, 194, 0.2)",
-        padding: "5% 5% 2% 5%", // TODO needs to change based on the size. 
-        marginBottom: "10px",
+        padding: "3% 3% 3% 3%", // TODO needs to change based on the size. 
+        marginBottom: "12px",
+        // gridTemplateColumns: "repeat(2, 1fr)",
+        [theme.breakpoints.down('xs')]: {
+            margin: "auto",
+            marginBottom: "8px",
+            padding: "2% 2% 6% 2%",
+        },
     },
-    itemImage:{
-        padding: "2% 2% 2% 2%",
+    itemImage: {
     },
-    itemDescription: {
-        paddingLeft: "10%",
+    itemDetail: {
+        paddingLeft: "2rem",
+        [theme.breakpoints.down('sm')]: {
+            paddingLeft: "1rem",
+            minHeight: "0px"
+        },
     },
-    itemTitle: {
+    itemDetailTitle: {
         textTransform: "uppercase",
         marginBottom: "10px",
     },
-    itemList: {
+    itemDetailList: {
         margin: "0",
         listStylePosition: "inside",
         padding: "0",
@@ -61,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function Product() {
+function Product(props) {
     const products = [
         {
             imgSrc: elastics,
@@ -72,7 +83,7 @@ function Product() {
                     "Gripper elastics",
                     "Mesh",
                     "Recycled elastics",
-                    "Biodegradable elasics",
+                    "Biodegradable elastics",
                     "Anti-microbial elastics"
                 ]
             }
@@ -111,6 +122,19 @@ function Product() {
         }
 
     ]
+    const getGridListCols = () => {
+    
+        if (isWidthUp('sm', props.width)) {
+          return 2;
+        }
+    
+        if (isWidthUp('xs', props.width)) {
+          return 1;
+        }
+    
+        return 1;
+      }
+
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -146,26 +170,27 @@ function Product() {
                 </div>
             </div>
 
-            <div>
-                <Grid container spacing={1} className={classes.itemsContainer} >
+            <div style={{ padding: 0 }}>
+
+                <Grid container className={classes.itemsContainer} justify="space-between" alignItems="stretch">
                     {
                         products.map(product => (
-                            <Grid container xs={12} sm={6} className={classes.item} direction="row" >
-                                <Grid item xs={5} sm={5} className={classes.itemImg}>
-                                    <img src={product.imgSrc} />
-                                </Grid>
-                                <Grid item xs={7} sm={7} className={classes.itemDescription} >
-                                    <div>
-                                        <Typography variant="h2"><div className={classes.itemTitle}>{product.description.title}</div> </Typography>
-                                        <Typography variant="body2">
-                                            <ul className={classes.itemList}>
-                                                {product.description.details.map(detail => (
-                                                    <li >{detail}</li>
-                                                ))}
-                                            </ul>
-                                        </Typography>
-                                    </div>
-                                </Grid>
+                            <Grid container item xs={12} sm={6} spacing={1} className={classes.item} alignItems="stretch">
+                                    <Grid item xs={12} sm={4} className={classes.itemImage}>
+                                        <img src={product.imgSrc} />
+                                    </Grid>
+                                    <Grid item xs={12} sm={8} >
+                                        <div className={classes.itemDetail}>
+                                            <Typography variant="h2"><div className={classes.itemDetailTitle}>{product.description.title}</div> </Typography>
+                                            <Typography variant="body2">
+                                                <ul className={classes.itemDetailList}>
+                                                    {product.description.details.map(detail => (
+                                                        <li style={{textIndent: "2px"}}>{detail}</li>
+                                                    ))}
+                                                </ul>
+                                            </Typography>
+                                        </div>
+                                    </Grid>
                             </Grid>
                         ))
                     }
@@ -175,4 +200,4 @@ function Product() {
     );
 }
 
-export default Product;
+export default withWidth()(Product);
