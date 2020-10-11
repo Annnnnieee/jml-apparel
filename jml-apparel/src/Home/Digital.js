@@ -11,8 +11,7 @@ import Typography from '@material-ui/core/Typography';
 
 function Digital() {
     return (
-        <div className="home-section">
-            <Typography variant="h1">Digital</Typography>
+
             <Grid container className="digital-section" spacing={1} justify="center">
                 <Grid item xs={12} sm={6} key="digital01">
                     <Card className="product-card">
@@ -37,7 +36,7 @@ function Digital() {
                     </Card>
                 </Grid>
             </Grid>
-        </div>
+
 
     );
 }

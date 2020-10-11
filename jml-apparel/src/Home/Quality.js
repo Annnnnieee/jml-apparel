@@ -11,42 +11,38 @@ import { Typography } from '@material-ui/core';
 
 function Quality() {
   return (
-    <div className="home-section">
-        <Typography variant="h1" >Quality and Sustainability</Typography>
-        <Grid container className="quality-section" spacing={1} justify="center">
-          <Grid item xs={4}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  image={Quality01}
-                />
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={4}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  image={Quality02}
-                />
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={4}>
-            <Card>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  image={Quality03}
-                />
-              </CardActionArea>
-            </Card>
-          </Grid>
-        </Grid>
-
-      </div>
+    <Grid container className="quality-section" spacing={1} justify="center">
+      <Grid item xs={4}>
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              image={Quality01}
+            />
+          </CardActionArea>
+        </Card>
+      </Grid>
+      <Grid item xs={4}>
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              image={Quality02}
+            />
+          </CardActionArea>
+        </Card>
+      </Grid>
+      <Grid item xs={4}>
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              image={Quality03}
+            />
+          </CardActionArea>
+        </Card>
+      </Grid>
+    </Grid>
   );
 }
 

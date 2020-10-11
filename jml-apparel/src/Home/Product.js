@@ -19,56 +19,52 @@ const useStyles = makeStyles((theme) => ({
 
 function Product() {
   return (
-    <div className="home-section">
-     <Typography variant="h1">Product</Typography>
-        <Grid container className="product-section" spacing={1} justify="center">
-          <Grid item xs={3} key="elastics">
-            <Card className="product-card">
-              <CardActionArea>
-                <CardMedia
-                  className="card-media"
-                  component="img"
-                  image={Elastics}
-                />
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={3} key="drawcords">
-            <Card className="product-card">
-              <CardActionArea>
-                <CardMedia
-                  className="card-media"
-                  component="img"
-                  image={Drawcords}
-                />
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={3} key="handtags">
-            <Card className="product-card">
-              <CardActionArea>
-                <CardMedia
-                  className="card-media"
-                  component="img"
-                  image={Handtags}
-                />
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={3} key="labels">
-            <Card className="product-card">
-              <CardActionArea>
-                <CardMedia
-                  className="card-media"
-                  component="img"
-                  image={Labels}
-                />
-              </CardActionArea>
-            </Card>
-          </Grid>
+      <Grid container className="product-section" spacing={1} justify="center">
+        <Grid item xs={3} key="elastics">
+          <Card className="product-card">
+            <CardActionArea>
+              <CardMedia
+                className="card-media"
+                component="img"
+                image={Elastics}
+              />
+            </CardActionArea>
+          </Card>
         </Grid>
-
-      </div>
+        <Grid item xs={3} key="drawcords">
+          <Card className="product-card">
+            <CardActionArea>
+              <CardMedia
+                className="card-media"
+                component="img"
+                image={Drawcords}
+              />
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item xs={3} key="handtags">
+          <Card className="product-card">
+            <CardActionArea>
+              <CardMedia
+                className="card-media"
+                component="img"
+                image={Handtags}
+              />
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item xs={3} key="labels">
+          <Card className="product-card">
+            <CardActionArea>
+              <CardMedia
+                className="card-media"
+                component="img"
+                image={Labels}
+              />
+            </CardActionArea>
+          </Card>
+        </Grid>
+      </Grid>
   );
 }
 
