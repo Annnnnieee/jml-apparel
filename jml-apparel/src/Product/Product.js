@@ -39,16 +39,12 @@ const useStyles = makeStyles((theme) => ({
     },
     item: {
         display: "flex",
-        flexGrow: 1,
-       //  margin: "auto",
+        flexDirection: "row",
         background: "rgba(194, 194, 194, 0.2)",
         padding: "3% 3% 3% 3%", // TODO needs to change based on the size. 
         marginBottom: "12px",
-        // gridTemplateColumns: "repeat(2, 1fr)",
         [theme.breakpoints.down('xs')]: {
-            margin: "auto",
-            marginBottom: "8px",
-            padding: "2% 2% 6% 2%",
+            padding: "4% 4% 4% 4%",
         },
     },
     itemImage: {
@@ -61,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     itemDetail: {
-        //paddingLeft: "2rem",
         minHeight: "18vh",
         [theme.breakpoints.down('xs')]: {
             paddingLeft: "1rem",

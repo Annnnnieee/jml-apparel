@@ -35,19 +35,16 @@ const useStyles = makeStyles((theme) => ({
     expoItem: {
         display: "flex",
         flexDirection: "row",
-        backgroundColor: "lightgrey",
+        background: "rgba(194, 194, 194, 0.2)",
         padding: "3% 3% 3% 3%",
-        marginBottom: "15px",
         marginBottom: "10px",
         [theme.breakpoints.down('xs')]: {
-            padding: "3% 3% 3% 3%",
+            padding: "4% 4% 4% 4%",
         },
     },
     expoDescription: {
         display: "flex",
         flexDirection: "column",
-        // justifyContent: "space-between",
-        verticalAlign: "text-top",
     },
     itemTitle: {
         // marginBottom: "7px",
@@ -65,21 +62,16 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             display: "block",
             verticalAlign: "bottom",
-            lineHeight: 0,
+            // lineHeight: 0,
             overflow: "hidden",
             maxWidth: "100%",
             height: "auto",
-            marginBottom: "0px auto 15px",
+            marginBottom: "4%",
         },
-        img: {
-            [theme.breakpoints.up('sm')]: {
-                paddingRight: "3%"
-            },
-        description: {
-            margin: "2% 0 2% 0",
-        },
-        }
-    }
+    },
+    description: {
+        padding: "3% 0 3% 0",
+    },
 }));
 
 function Quality() {
@@ -126,9 +118,11 @@ function Quality() {
                                     <img src={cert.imageSrc} />
                                 </Grid>
                                 <Grid item xs={12} sm={7} className={classes.expoDescription}>
-                                        <Typography variant="h2" component="div" className={classes.itemTitle}>{cert.name}</Typography>
-                                        <Typography variant="body2" component="div" className={classes.description}>{cert.description}</Typography>
-                                        <Typography variant="body2" component="div" >{cert.link}</Typography>
+                                    <Typography variant="h2" >{cert.name}</Typography>
+                                    <div className={classes.description}>
+                                        <Typography variant="body2" ><div>{cert.description}</div></Typography>
+                                    </div>
+                                    <Typography variant="body2" > <div>{cert.link} </div></Typography>
                                 </Grid>
                             </Grid>
                         ))

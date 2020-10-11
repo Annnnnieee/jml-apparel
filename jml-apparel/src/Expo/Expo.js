@@ -38,12 +38,11 @@ const useStyles = makeStyles((theme) => ({
     expoItem: {
         display: "flex",
         flexDirection: "row",
-        backgroundColor: "lightgrey",
+        background: "rgba(194, 194, 194, 0.2)",
         padding: "3% 3% 3% 3%",
-        marginBottom: "15px",
         marginBottom: "10px",
         [theme.breakpoints.down('xs')]: {
-            padding: "3% 3% 3% 3%",
+            padding: "4% 4% 4% 4%",
         },
     },
     expoDescription: {
