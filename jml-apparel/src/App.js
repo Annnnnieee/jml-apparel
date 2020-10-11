@@ -35,7 +35,8 @@ function App() {
 
   theme.typography.h1 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "4rem",
+    fontSize: "3.5rem",
+    fontWeight: "normal",
     [theme.breakpoints.only('sm')]: {
       fontSize: '30px',
     },
@@ -58,6 +59,7 @@ function App() {
   theme.typography.h2 = {
     fontFamily: "'Work Sans', sans-serif",
     fontSize: "1.3rem",
+    fontWeight: "normal",
     [theme.breakpoints.only('sm')]: {
       fontSize: '1.2rem',
     },
