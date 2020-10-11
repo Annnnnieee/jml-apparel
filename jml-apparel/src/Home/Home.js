@@ -1,5 +1,4 @@
 import React from 'react';
-import Carousel from 'react-material-ui-carousel'
 
 import Cover from './Cover';
 import Digital from './Digital';

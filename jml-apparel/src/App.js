@@ -12,9 +12,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom";
-import { createMuiTheme, MuiThemeProvider, ThemeProvider } from "@material-ui/core/styles";
+  } from "react-router-dom";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import ResponsiveDrawer from './Home/ResponsiveDrawer';
 
 function App() {
@@ -36,7 +35,7 @@ function App() {
 
   theme.typography.h1 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "6.125rem",
+    fontSize: "4rem",
     [theme.breakpoints.only('sm')]: {
       fontSize: '30px',
     },

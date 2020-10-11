@@ -1,15 +1,13 @@
 
 import React from 'react';
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 
 import digitalCover from '../assets/digital-title.jpg';
-import digitalCoverAlt from '../assets/digital-alt-title.jpg';
+// import digitalCoverAlt from '../assets/digital-alt-title.jpg';
 import digital3DTrims01 from '../assets/digital-3dtrims01.jpg';
 import digital3DTrims02 from '../assets/digital-3dtrims02.jpg';
 import digital3DTrims03 from '../assets/digital-3dtrims03.jpg';
@@ -86,7 +84,7 @@ function Digital() {
     return (
         <div className={classes.root}>
             <div className={classes.introContainer}>
-                <img src={digitalCover} alt="expo cover image" />
+                <img src={digitalCover} alt="expo cover" />
             </div>
             <Box className={classes.item} >
                 <Typography variant="h2" className={classes.itemTitle}>3D TRIMS LIBRARY</Typography>
@@ -103,7 +101,7 @@ function Digital() {
                         trimsImages.map(image => {
                             return (
                                 <Grid item xs={12} sm={2} >
-                                    <img src={image} />
+                                    <img src={image} alt="trim" />
                                 </Grid>
                             )
                         })
@@ -122,7 +120,7 @@ function Digital() {
                     {RFIDImages.map(image => {
                         return (
                             <Grid item xs={12} sm={2}>
-                                <img src={image} />
+                                <img src={image} alt="rfid"/>
                             </Grid>
                         )
                     })}

@@ -1,8 +1,7 @@
 import React from 'react';
 import productTitle from '../assets/product-title.jpg'
-import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import withWidth from '@material-ui/core/withWidth';
 
 
 import elastics from '../assets/product-elastics01.jpg';
@@ -11,8 +10,6 @@ import hangtags from '../assets/product-hangtags01.jpg';
 import labels from '../assets/product-labels01.jpg';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -125,24 +122,12 @@ function Product(props) {
         }
 
     ]
-    const getGridListCols = () => {
-    
-        if (isWidthUp('sm', props.width)) {
-          return 2;
-        }
-    
-        if (isWidthUp('xs', props.width)) {
-          return 1;
-        }
-    
-        return 1;
-      }
 
     const classes = useStyles();
     return (
         <div className={classes.root}>
             <div className={classes.introductionContainer}>
-                <img src={productTitle} alt="product cover image" />
+                <img src={productTitle} alt="product cover" />
                 <div className={classes.introduction}>
                     <Typography variant="body1">
                         <p> From labels and hangtags to elastics and tape, we supply hundreds of
@@ -180,7 +165,7 @@ function Product(props) {
                         products.map(product => (
                             <Grid container item xs={12} sm={6} spacing={1} className={classes.item} justify="space-between">
                                     <Grid item xs={12} sm={5} md={6} >
-                                        <img src={product.imgSrc} className={classes.itemImage} />
+                                        <img src={product.imgSrc} className={classes.itemImage} alt="product offering" />
                                     </Grid>
                                     <Grid item xs={12} sm={7} md={6} >
                                         <div className={classes.itemDetail}>

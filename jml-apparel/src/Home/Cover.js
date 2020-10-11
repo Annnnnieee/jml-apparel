@@ -38,7 +38,7 @@ function Item(props)
 {
     return (
         <div>
-            <img src={props.item.src}/>
+            <img src={props.item.src} alt="cover"/>
         </div>
     )
 }

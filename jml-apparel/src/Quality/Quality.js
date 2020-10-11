@@ -1,9 +1,6 @@
 
 import React from 'react';
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
@@ -88,7 +85,7 @@ function Quality() {
     return (
         <div className={classes.root}>
             <div className={classes.introContainer}>
-                <img src={QualityCoverImage} alt="quality and sustainability cover image" />
+                <img src={QualityCoverImage} alt="quality and sustainability cover" />
                 <Typography variant="body1">
                     <p>We understand the importance of quality in your garment design process.
                     At JML, we are committed to supporting you in meeting and exceeding your expectations.
@@ -115,7 +112,7 @@ function Quality() {
                         certifications.map(cert => (
                             <Grid container item xs={12} className={classes.expoItem} direction="row" >
                                 <Grid item xs={12} sm={5} className={classes.imgContainer}>
-                                    <img src={cert.imageSrc} />
+                                    <img src={cert.imageSrc} alt="quality or sustainability representative"/>
                                 </Grid>
                                 <Grid item xs={12} sm={7} className={classes.expoDescription}>
                                     <Typography variant="h2" >{cert.name}</Typography>

@@ -6,20 +6,20 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 
-import contactCoverAlt from '../assets/contact-alt-title.jpg';
+// import contactCoverAlt from '../assets/contact-alt-title.jpg';
 import contactVancouver from '../assets/contact-vancouver01.jpg';
 import contactShanghai from '../assets/contact-shanghai01.jpg';
 
 function Contact() {
   return (
     <Container>
-      <img src={contactCover} alt="contact cover image" />
+      <img src={contactCover} alt="contact cover" />
 
       <div>
         <Grid container spacing={1} justify="center">
           <Grid item xs={12} >
             <Paper>
-              <img src={contactVancouver} />
+              <img src={contactVancouver} alt="vancouver contact info" /> {/* TODO replace with google map. shanghai too*/}
               <Box>
                 <div>contact info</div>
               </Box>
@@ -27,7 +27,7 @@ function Contact() {
           </Grid>
           <Grid item xs={12} >
             <Paper>
-              <img src={contactShanghai} />
+              <img src={contactShanghai} alt="shanghai contact info" />
               <Box>
                 <div>contact info in chinese</div>
               </Box>

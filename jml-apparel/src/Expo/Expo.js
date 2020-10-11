@@ -1,13 +1,12 @@
 
 
 import React from 'react';
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 import expoCover from '../assets/expo-title.jpg';
-import expoCoverAlt from '../assets/expo-alt-title.jpg';
+// import expoCoverAlt from '../assets/expo-alt-title.jpg';
 import expo2020ipso from '../assets/expo-2020-ipso.jpg';
 import expo2020PerformancePortland from '../assets/expo-2020-performance-days-portland.jpg';
 import expo2020PerformanceMunich from '../assets/expo-2020-performance-days-munich.jpg';
@@ -15,7 +14,6 @@ import expo2021ORWinter from '../assets/expo-2021-OR-winter.jpg';
 import expo2021performanceSummerMunich from '../assets/expo-2021-performance-days-summer-munich.jpg';
 import expo2021ORSummer from '../assets/expo-2021-OR-summer.jpg';
 import expo2021performanceWinterMunich from '../assets/expo-2021-performance-days-winter-munich.jpg';
-import { useTheme } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -95,7 +93,7 @@ function Expo() {
     return ( // TODO repl{ace cover image based on size. 
         <div classesName={classes.root}>
             <div className={classes.introContainer}>
-                <img src={expoCover} alt="expo cover image" className="cover" />
+                <img src={expoCover} alt="expo cover" className="cover" />
             </div>
 
             <Typography variant="h2" className={classes.expoHeader}>2020 EVENTS</Typography>
@@ -104,7 +102,7 @@ function Expo() {
                     events2020.map(event => (
                         <Grid container item xs={12} className={classes.expoItem} direction="row" >
                             <Grid item xs={12} sm={5} className={classes.imgContainer}> {/* TODO this width is messed up*/}
-                                <img src={event.image} />
+                                <img src={event.image} alt="event"/>
                             </Grid>
                             <Grid item xs={12} sm={7} className={classes.expoDescription}>
                                 <div>
@@ -125,7 +123,7 @@ function Expo() {
                     events2021.map(event => (
                         <Grid container xs={12} className={classes.expoItem} direction="row" >
                             <Grid item xs={12} sm={3}  className={classes.imgContainer}> 
-                                <img src={event.image} />
+                                <img src={event.image} alt="event"/>
                             </Grid>
                             <Grid item xs={12} sm={7} className={classes.expoDescription}>
                                 <div>

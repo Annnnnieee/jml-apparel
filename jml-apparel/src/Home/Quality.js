@@ -6,7 +6,6 @@ import Quality01 from '../assets/lp-quality01.jpg';
 import Quality02 from '../assets/lp-quality02.jpg';
 import Quality03 from '../assets/lp-quality03.jpg';
 import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
 
 
 function Quality() {

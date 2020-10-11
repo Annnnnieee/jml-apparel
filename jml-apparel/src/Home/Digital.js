@@ -5,9 +5,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Digital01 from '../assets/lp-digital01.jpg';
 import Digital02 from '../assets/lp-digital02.jpg';
-import Typography from '@material-ui/core/Typography';
-
-
 
 function Digital() {
     return (
