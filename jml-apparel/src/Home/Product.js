@@ -8,11 +8,19 @@ import Handtags from '../assets/lp-product03.jpg';
 import Labels from '../assets/lp-product04.jpg';
 import Grid from '@material-ui/core/Grid';
 
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+
+
+const useStyles = makeStyles((theme) => ({
+
+}));
+
 
 function Product() {
   return (
     <div className="home-section">
-      <div className="home-section-title">Products</div>
+     <Typography variant="h1">Product</Typography>
         <Grid container className="product-section" spacing={1} justify="center">
           <Grid item xs={3} key="elastics">
             <Card className="product-card">

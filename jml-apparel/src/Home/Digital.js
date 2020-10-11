@@ -5,12 +5,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Digital01 from '../assets/lp-digital01.jpg';
 import Digital02 from '../assets/lp-digital02.jpg';
+import Typography from '@material-ui/core/Typography';
+
 
 
 function Digital() {
     return (
         <div className="home-section">
-            <div className="home-section-title">Digital</div>
+            <Typography variant="h1">Digital</Typography>
             <Grid container className="digital-section" spacing={1} justify="center">
                 <Grid item xs={12} sm={6} key="digital01">
                     <Card className="product-card">

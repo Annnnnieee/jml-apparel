@@ -6,12 +6,13 @@ import Quality01 from '../assets/lp-quality01.jpg';
 import Quality02 from '../assets/lp-quality02.jpg';
 import Quality03 from '../assets/lp-quality03.jpg';
 import Grid from '@material-ui/core/Grid';
+import { Typography } from '@material-ui/core';
 
 
 function Quality() {
   return (
     <div className="home-section">
-        <div className="home-section-title">Quality and Sustainability</div>
+        <Typography variant="h1" >Quality and Sustainability</Typography>
         <Grid container className="quality-section" spacing={1} justify="center">
           <Grid item xs={4}>
             <Card>
