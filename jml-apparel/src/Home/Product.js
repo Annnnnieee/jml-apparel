@@ -5,7 +5,6 @@ import Elastics from '../assets/lp-product01.jpg';
 import Drawcords from '../assets/lp-product02.jpg';
 import Hangtags from '../assets/lp-product03.jpg';
 import Labels from '../assets/lp-product04.jpg';
-import Grid from '@material-ui/core/Grid';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
