@@ -85,7 +85,6 @@ function ListItemLink(props) {
     ,
     [to],
   );
-  let classes = useStyles();
   return (
     <li>
       <ListItem button component={renderLink}>
