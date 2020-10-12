@@ -1,7 +1,9 @@
 import React from 'react';
-import productTitle from '../assets/product-title.jpg'
+import productCover from '../assets/product-title.jpg';
+import productCoverAlt from '../assets/product-alt-title.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import withWidth from '@material-ui/core/withWidth';
+import { Hidden } from '@material-ui/core';
 
 
 import elastics from '../assets/product-elastics01.jpg';
@@ -46,11 +48,11 @@ const useStyles = makeStyles((theme) => ({
     },
     itemImage: {
         [theme.breakpoints.only('sm')]: {
-           paddingRight: "20px",
-         },
+            paddingRight: "20px",
+        },
         [theme.breakpoints.up('md')]: {
-           width: "80%",
-           height: "80%",
+            width: "80%",
+            height: "80%",
         },
     },
     itemDetail: {
@@ -127,7 +129,13 @@ function Product(props) {
     return (
         <div className={classes.root}>
             <div className={classes.introductionContainer}>
-                <img src={productTitle} alt="product cover" />
+                <Hidden smDown>
+                    <img src={productCover} alt="product cover" />
+                </Hidden>
+                <Hidden mdUp>
+                    <img src={productCoverAlt} alt="product cover" />
+                </Hidden>
+
                 <div className={classes.introduction}>
                     <Typography variant="body1">
                         <p> From labels and hangtags to elastics and tape, we supply hundreds of
@@ -164,21 +172,21 @@ function Product(props) {
                     {
                         products.map(product => (
                             <Grid container item xs={12} sm={6} spacing={1} className={classes.item} justify="space-between">
-                                    <Grid item xs={12} sm={5} md={6} >
-                                        <img src={product.imgSrc} className={classes.itemImage} alt="product offering" />
-                                    </Grid>
-                                    <Grid item xs={12} sm={7} md={6} >
-                                        <div className={classes.itemDetail}>
-                                            <Typography variant="h2"><div className={classes.itemDetailTitle}>{product.description.title}</div> </Typography>
-                                            <Typography variant="body2">
-                                                <ul className={classes.itemDetailList}>
-                                                    {product.description.details.map(detail => (
-                                                        <li>{detail}</li>
-                                                    ))}
-                                                </ul>
-                                            </Typography>
-                                        </div>
-                                    </Grid>
+                                <Grid item xs={12} sm={5} md={6} >
+                                    <img src={product.imgSrc} className={classes.itemImage} alt="product offering" />
+                                </Grid>
+                                <Grid item xs={12} sm={7} md={6} >
+                                    <div className={classes.itemDetail}>
+                                        <Typography variant="h2"><div className={classes.itemDetailTitle}>{product.description.title}</div> </Typography>
+                                        <Typography variant="body2">
+                                            <ul className={classes.itemDetailList}>
+                                                {product.description.details.map(detail => (
+                                                    <li>{detail}</li>
+                                                ))}
+                                            </ul>
+                                        </Typography>
+                                    </div>
+                                </Grid>
                             </Grid>
                         ))
                     }
