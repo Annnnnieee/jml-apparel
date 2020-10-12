@@ -3,10 +3,12 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { Hidden } from '@material-ui/core';
 
 
-import QualityCoverImage from '../assets/quality-title.jpg';
-import BluesignPartner from '../assets/quality-bluesign-system-partner.jpg'
+import QualityCover from '../assets/quality-title.jpg';
+import QualityCoverAlt from '../assets/quality-alt-title.jpg';
+import BluesignPartner from '../assets/quality-bluesign-system-partner.jpg';
 import oekotexStandard from '../assets/quality-oekotex-standard100.jpg';
 import iso9001 from '../assets/quality-iso9001.jpg';
 import bvAccreditedLab from '../assets/quality-bv-accredited-lab.jpg';
@@ -85,7 +87,12 @@ function Quality() {
     return (
         <div className={classes.root}>
             <div className={classes.introContainer}>
-                <img src={QualityCoverImage} alt="quality and sustainability cover" />
+                <Hidden smDown>
+                    <img src={QualityCover} alt="quality and sustainability cover" />
+                </Hidden>
+                <Hidden mdUp>
+                    <img src={QualityCoverAlt} alt="quality and sustainability cover" />
+                </Hidden>
                 <Typography variant="body1">
                     <p>We understand the importance of quality in your garment design process.
                     At JML, we are committed to supporting you in meeting and exceeding your expectations.
@@ -112,7 +119,7 @@ function Quality() {
                         certifications.map(cert => (
                             <Grid container item xs={12} className={classes.expoItem} direction="row" >
                                 <Grid item xs={12} sm={5} className={classes.imgContainer}>
-                                    <img src={cert.imageSrc} alt="quality or sustainability representative"/>
+                                    <img src={cert.imageSrc} alt="quality or sustainability representative" />
                                 </Grid>
                                 <Grid item xs={12} sm={7} className={classes.expoDescription}>
                                     <Typography variant="h2" >{cert.name}</Typography>

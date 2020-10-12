@@ -4,9 +4,11 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { Hidden } from '@material-ui/core';
+
 
 import expoCover from '../assets/expo-title.jpg';
-// import expoCoverAlt from '../assets/expo-alt-title.jpg';
+import expoCoverAlt from '../assets/expo-alt-title.jpg';
 import expo2020ipso from '../assets/expo-2020-ipso.jpg';
 import expo2020PerformancePortland from '../assets/expo-2020-performance-days-portland.jpg';
 import expo2020PerformanceMunich from '../assets/expo-2020-performance-days-munich.jpg';
@@ -93,7 +95,12 @@ function Expo() {
     return ( // TODO repl{ace cover image based on size. 
         <div classesName={classes.root}>
             <div className={classes.introContainer}>
-                <img src={expoCover} alt="expo cover" className="cover" />
+                <Hidden smDown>
+                    <img src={expoCover} alt="expo cover" />
+                </Hidden>
+                <Hidden mdUp>
+                    <img src={expoCoverAlt} alt="expo cover" />
+                </Hidden>
             </div>
 
             <Typography variant="h2" className={classes.expoHeader}>2020 EVENTS</Typography>
