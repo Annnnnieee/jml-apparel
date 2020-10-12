@@ -58,7 +58,6 @@ function Home() {
       <Awards />
       <NotableClients />
     </div>
-
   );
 }
 

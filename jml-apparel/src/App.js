@@ -18,6 +18,11 @@ import ResponsiveDrawer from './Home/ResponsiveDrawer';
 
 function App() {
   const theme = createMuiTheme({
+    // props: {
+    //   MuiButtonBase: {
+    //     disableRipple: true,
+    //   },
+    // },
     breakpoints: {
       values: {
         xs: 0,
