@@ -2,12 +2,13 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import { Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
 
 import digitalCover from '../assets/digital-title.jpg';
-// import digitalCoverAlt from '../assets/digital-alt-title.jpg';
+import digitalCoverAlt from '../assets/digital-alt-title.jpg';
 import digital3DTrims01 from '../assets/digital-3dtrims01.jpg';
 import digital3DTrims02 from '../assets/digital-3dtrims02.jpg';
 import digital3DTrims03 from '../assets/digital-3dtrims03.jpg';
@@ -84,7 +85,12 @@ function Digital() {
     return (
         <div className={classes.root}>
             <div className={classes.introContainer}>
-                <img src={digitalCover} alt="expo cover" />
+                <Hidden smDown>
+                    <img src={digitalCover} alt="expo cover" />
+                </Hidden>
+                <Hidden mdUp>
+                    <img src={digitalCoverAlt} alt="expo cover" />
+                </Hidden>
             </div>
             <Box className={classes.item} >
                 <Typography variant="h2" className={classes.itemTitle}>3D TRIMS LIBRARY</Typography>
@@ -93,7 +99,7 @@ function Digital() {
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
                 in culpa qui officia deserunt mollit anim id est laborum.</Typography>
 
                 <Grid container spacing={2} justify="right" className={classes.images}>
@@ -112,15 +118,15 @@ function Digital() {
             <Box className={classes.item}>
                 <Typography variant="h2" className={classes.itemTitle}>RFID PRODUCTS</Typography>
                 <Typography variant="body2" className={classes.description}>Radio-Frequency Identification (RFID) maximizes efficiency
-                    in logistics and improve inventory management. RFID technology
-                    encodes and imprints data to convert inlays into RFID tags,
+                in logistics and improve inventory management. RFID technology
+                encodes and imprints data to convert inlays into RFID tags,
                     labels and other garment accessories.</Typography>
 
                 <Grid container spacing={2} className={classes.images} >
                     {RFIDImages.map(image => {
                         return (
                             <Grid item xs={12} sm={2}>
-                                <img src={image} alt="rfid"/>
+                                <img src={image} alt="rfid" />
                             </Grid>
                         )
                     })}
