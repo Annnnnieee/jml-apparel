@@ -23,6 +23,19 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1000,
+    color: "black",
+    backgroundColor: "white",
+  },
+  listItem: {
+    minWidth: 0,
+    lineHeight: 1,
+    borderRadius: 0,
+    letterSpacing: 0, 
+    textTransform: "none",
+    fontWeight: "bold",
+  },
+  listItemText: {
+    padding: "0.2% 0.5% 0.2% 0.5%"
   },
   menuButton: {
     [theme.breakpoints.up('sm')]: {
@@ -42,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "left",
   },
 }));
+
 
 
 function ElevationScroll(props) {
@@ -71,7 +85,7 @@ function ListItemLink(props) {
     ,
     [to],
   );
-
+  let classes = useStyles();
   return (
     <li>
       <ListItem button component={renderLink}>
@@ -111,10 +125,12 @@ function ResponsiveDrawer() {
     </div>
   );
 
+
   return (
     <div className={classes.root}>
       <CssBaseline />
       <ElevationScroll >
+
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <div className={classes.title} >
@@ -123,12 +139,12 @@ function ResponsiveDrawer() {
 
 
             <Hidden xsDown>
-              <Button color="inherit" component={RouterLink} to="/product">Product</Button>
-              <Button color="inherit" component={RouterLink} to="/digital">Digital</Button>
-              <Button color="inherit" component={RouterLink} to="/quality-and-sustainability">Quality and Sustainability</Button>
-              <Button color="inherit" component={RouterLink} to="/expo-and-conference">Expo and Conference</Button>
-              <Button color="inherit" component={RouterLink} to="/about-us">About Us</Button>
-              <Button color="inherit" component={RouterLink} to="/contact-us">Contact Us</Button>
+              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/product">Product</Button>
+              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/digital">Digital</Button>
+              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/quality-and-sustainability">Quality and Sustainability</Button>
+              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/expo-and-conference">Expo and Conference</Button>
+              <Button color="inherit" classes={{ root: classes.listItem,  text: classes.listItemText}} component={RouterLink} to="/about-us">About Us</Button>
+              <Button color="inherit" classes={{ root: classes.listItem,  text: classes.listItemText}} component={RouterLink} to="/contact-us">Contact Us</Button>
             </Hidden>
 
             <IconButton

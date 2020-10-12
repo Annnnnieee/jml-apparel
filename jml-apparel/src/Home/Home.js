@@ -12,6 +12,14 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
   },
+  introContainer: {
+    marginBottom: "1%",
+    background: "rgba(194, 194, 194, 0.2)",
+    padding: "0 2% 2.5% 2%",
+    [theme.breakpoints.down('xs')]: {
+      padding: "4% 4% 7% 4%",
+    },
+  },
   section: {
     marginBottom: "1%",
     background: "rgba(194, 194, 194, 0.2)",
@@ -31,7 +39,7 @@ function Home() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <div className={classes.section}>
+      <div className={classes.introContainer}>
         <Cover />
       </div>
 
