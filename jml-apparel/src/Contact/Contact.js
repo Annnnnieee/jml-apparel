@@ -5,16 +5,22 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
+import { Hidden } from '@material-ui/core';
 
-// import contactCoverAlt from '../assets/contact-alt-title.jpg';
+
+import contactCoverAlt from '../assets/contact-alt-title.jpg';
 import contactVancouver from '../assets/contact-vancouver01.jpg';
 import contactShanghai from '../assets/contact-shanghai01.jpg';
 
 function Contact() {
   return (
     <Container>
-      <img src={contactCover} alt="contact cover" />
-
+      <Hidden smDown>
+        <img src={contactCover} alt="contact cover" />
+      </Hidden>
+      <Hidden mdUp>
+        <img src={contactCoverAlt} alt="contact cover" />
+      </Hidden>
       <div>
         <Grid container spacing={1} justify="center">
           <Grid item xs={12} >
