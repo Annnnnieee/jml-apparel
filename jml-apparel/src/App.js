@@ -12,7 +12,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  } from "react-router-dom";
+} from "react-router-dom";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import ResponsiveDrawer from './Home/ResponsiveDrawer';
 
@@ -28,15 +28,15 @@ function App() {
         xs: 0,
         sm: 640,
         md: 1000,
-        lg: 1280,
+        lg: 1300,
         xl: 1920,
       },
     },
-   
+
   });
 
   theme.typography.fontFamily = "'Work Sans', sans-serif";
-  
+
   theme.typography.p = {
     fontFamily: "'Work Sans', sans-serif",
     fontSize: "1rem",
@@ -45,8 +45,11 @@ function App() {
 
   theme.typography.h1 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "3.5rem",
+    fontSize: "5rem",
     fontWeight: "normal",
+    [theme.breakpoints.only('md')]: {
+      fontSize: "3.5rem",
+    },
     [theme.breakpoints.only('sm')]: {
       fontSize: '30px',
     },
@@ -56,30 +59,36 @@ function App() {
   }
 
   theme.typography.body1 = {
-    fontSize: "1.2rem",
-     fontFamily: "'Work Sans', sans-serif",
+    fontSize: "1.9rem",
+    fontFamily: "'Work Sans', sans-serif",
+    [theme.breakpoints.only('md')]: {
+      fontSize: "1.2rem",
+    },
     [theme.breakpoints.only('sm')]: {
-      fontSize: '1rem',
+      fontSize: '1.1rem',
     },
     [theme.breakpoints.only('xs')]: {
-      fontSize: '0.7rem',
+      fontSize: '1rem',
     },
   }
 
   theme.typography.h2 = {
-     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "1.3rem",
+    fontFamily: "'Work Sans', sans-serif",
+    fontSize: "2rem",
     fontWeight: "normal",
+    [theme.breakpoints.only('md')]: {
+      fontSize: "1.3rem",
+    },
     [theme.breakpoints.only('sm')]: {
       fontSize: '1.2rem',
     },
     [theme.breakpoints.only('xs')]: {
-      fontSize: '1.0rem',
+      fontSize: '1.1rem',
     },
   }
 
   theme.typography.h3 = {
-     fontFamily: "'Work Sans', sans-serif",
+    fontFamily: "'Work Sans', sans-serif",
     fontSize: "1.1rem",
     fontWeight: "normal",
     [theme.breakpoints.only('sm')]: {
@@ -90,7 +99,7 @@ function App() {
     },
   }
   theme.typography.body2 = theme.typography.body1;
-  
+
   return (
     <ThemeProvider theme={theme}>
       <Router>

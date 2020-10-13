@@ -24,6 +24,14 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         marginBottom: "15px",
     },
+    introduction: {
+        maxWidth: "95%",
+        marginBottom: "3%",
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: "100%",
+            marginBottom: "7%",
+        },
+    },
     expoHeader: {
         backgroundColor: "#484848",
         paddingTop: "10px",
@@ -93,7 +101,7 @@ function Quality() {
                 <Hidden mdUp>
                     <img src={QualityCoverAlt} alt="quality and sustainability cover" />
                 </Hidden>
-                <Typography variant="body1">
+                <Typography variant="body1" className={classes.introduction}>
                     <p>We understand the importance of quality in your garment design process.
                     At JML, we are committed to supporting you in meeting and exceeding your expectations.
                     We take pride in our research and development, comprehensive knowledge of the industry

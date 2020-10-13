@@ -23,13 +23,16 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: "90%",
         margin: "auto",
         marginBottom: "15px",
+        [theme.breakpoints.down('sm')]: {
+            marginBottom: "7%",
+        },
     },
     introduction: {
-        maxWidth: "90%",
+        maxWidth: "95%",
         marginBottom: "3%",
         [theme.breakpoints.down('sm')]: {
             maxWidth: "100%",
-            marginBottom: "7%",
+            // marginBottom: "7%",
         },
     },
     itemsContainer: {
