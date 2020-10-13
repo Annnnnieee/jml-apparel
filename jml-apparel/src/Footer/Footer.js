@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-function About() {
+function Footer() {
     return (
         <div>
            footer
@@ -9,4 +9,4 @@ function About() {
     );
 }
 
-export default About;
+export default Footer;

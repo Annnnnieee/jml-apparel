@@ -51,7 +51,7 @@ function App() {
       fontSize: '30px',
     },
     [theme.breakpoints.only('xs')]: {
-      fontSize: '30px',
+      fontSize: '2.5rem',
     },
   }
 
@@ -74,7 +74,7 @@ function App() {
       fontSize: '1.2rem',
     },
     [theme.breakpoints.only('xs')]: {
-      fontSize: '0.8rem',
+      fontSize: '1.0rem',
     },
   }
 

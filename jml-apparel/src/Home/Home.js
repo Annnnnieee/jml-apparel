@@ -12,7 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    flexDirection: "column",  
+    flexDirection: "column",
   },
   introContainer: {
     marginBottom: "1%",
@@ -58,7 +58,9 @@ function Home() {
         <Quality />
       </div>
       <Awards />
-      <NotableClients />
+      <div className={classes.section}>
+        <NotableClients />
+      </div>
     </div>
   );
 }

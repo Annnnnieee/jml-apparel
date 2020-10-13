@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
     },
     content: {
         background: "rgba(77, 77, 77, 1)",
-        padding: '1rem 1.5rem 1rem',
+        padding: '1rem 1rem 1rem',
     },
     title: {
         color: '#fff',
