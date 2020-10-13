@@ -22,14 +22,14 @@ const useStyles = makeStyles((theme) => ({
     introContainer: {
         maxWidth: "90%",
         margin: "auto",
-        marginBottom: "15px",
+        marginBottom: "2%",
     },
     introduction: {
         maxWidth: "95%",
-        marginBottom: "3%",
+        marginBottom: "2%",
         [theme.breakpoints.down('sm')]: {
             maxWidth: "100%",
-            marginBottom: "7%",
+            marginBottom: "3%",
         },
     },
     expoHeader: {
@@ -43,10 +43,10 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "row",
         background: "rgba(194, 194, 194, 0.2)",
-        padding: "3% 3% 3% 3%",
+        padding: "3% 4.5% 3% 4.5%", // TODO fix this. 55 2 5
         marginBottom: "10px",
         [theme.breakpoints.down('xs')]: {
-            padding: "4% 4% 4% 4%",
+            padding: "4% 4.5% 4% 4.5%",
         },
     },
     expoDescription: {

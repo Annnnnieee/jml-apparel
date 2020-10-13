@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
     introductionContainer: {
         maxWidth: "90%",
         margin: "auto",
-        marginBottom: "15px",
+        marginBottom: "2%",
         [theme.breakpoints.down('sm')]: {
-            marginBottom: "7%",
+            marginBottom: "3%",
         },
     },
     introduction: {
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
         padding: "3% 3% 3% 3%", // TODO needs to change based on the size. 
         marginBottom: "12px",
         [theme.breakpoints.down('xs')]: {
-            padding: "4% 4% 4% 4%",
+            padding: "4% 4.5% 4% 4.5%",
         },
     },
     itemImage: {
@@ -77,57 +77,30 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+function Item(props) {
+    const classes = useStyles();
+    return (
+        <Grid container item xs={12} sm={6} spacing={1} className={classes.item} justify="space-between">
+            <Grid item xs={12} sm={5} md={6} >
+                <img src={props.imgSrc} className={classes.itemImage} alt="product offering" />
+            </Grid>
+            <Grid item xs={12} sm={7} md={6} >
+                <div className={classes.itemDetail}>
+                    <Typography variant="h2"><div className={classes.itemDetailTitle}>{props.title}</div> </Typography>
+                    <Typography variant="body2">
+                        <ul className={classes.itemDetailList}>
+                            {props.description.map(detail => (
+                                <li>{detail}</li>
+                            ))}
+                        </ul>
+                    </Typography>
+                </div>
+            </Grid>
+        </Grid>
+    )
+}
+
 function Product(props) {
-    const products = [
-        {
-            imgSrc: elastics,
-            description: {
-                title: "Elastics", details: [
-                    "Bra straps",
-                    "Underband and waistband elastics",
-                    "Gripper elastics",
-                    "Mesh",
-                    "Recycled elastics",
-                    "Biodegradable elastics",
-                    "Anti-microbial elastics"
-                ]
-            }
-        },
-        {
-            imgSrc: drawcords,
-            description: {
-                title: "Drawcords", details: [
-                    "Metal tipped",
-                    "TPU tipped",
-                    "ABS tipped",
-                    "Specialty tips",
-                    "Stretch",
-                    "Non-stretch"
-                ]
-            }
-        },
-        {
-            imgSrc: hangtags,
-            description: {
-                title: "Hangtags", details: [
-                    "Paper hangtag",
-                    "Paper packaging",
-                    "Shopping bags"
-                ]
-            }
-        },
-        {
-            imgSrc: labels,
-            description: {
-                title: "Labels", details: [
-                    "Woven Labels",
-                    "Print Labels"
-                ]
-            }
-        }
-
-    ]
-
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -172,27 +145,46 @@ function Product(props) {
             <div style={{ padding: 0 }}>
 
                 <Grid container className={classes.itemsContainer} justify="space-between"  >
-                    {
-                        products.map(product => (
-                            <Grid container item xs={12} sm={6} spacing={1} className={classes.item} justify="space-between">
-                                <Grid item xs={12} sm={5} md={6} >
-                                    <img src={product.imgSrc} className={classes.itemImage} alt="product offering" />
-                                </Grid>
-                                <Grid item xs={12} sm={7} md={6} >
-                                    <div className={classes.itemDetail}>
-                                        <Typography variant="h2"><div className={classes.itemDetailTitle}>{product.description.title}</div> </Typography>
-                                        <Typography variant="body2">
-                                            <ul className={classes.itemDetailList}>
-                                                {product.description.details.map(detail => (
-                                                    <li>{detail}</li>
-                                                ))}
-                                            </ul>
-                                        </Typography>
-                                    </div>
-                                </Grid>
-                            </Grid>
-                        ))
-                    }
+                    <Item
+                        imgSrc={elastics}
+                        title="Elastics"
+                        description={[
+                            "Bra straps",
+                            "Underband and waistband elastics",
+                            "Gripper elastics",
+                            "Mesh",
+                            "Recycled elastics",
+                            "Biodegradable elastics",
+                            "Anti-microbial elastics"
+                        ]} />
+
+                    <Item
+                        imgSrc={drawcords}
+                        title="Drawcords"
+                        description={[
+                            "Metal tipped",
+                            "TPU tipped",
+                            "ABS tipped",
+                            "Specialty tips",
+                            "Stretch",
+                            "Non-stretch"
+                        ]} />
+                    <Item
+                        imgSrc={hangtags}
+                        title="Hangtags"
+                        description={[
+                            "Paper hangtag",
+                            "Paper packaging",
+                            "Shopping bags"
+                        ]} />
+                    <Item
+                        imgSrc={labels}
+                        title="Labels"
+                        description={[
+                            "Woven Labels",
+                            "Print Labels"
+                        ]} />
+
                 </Grid>
             </div>
         </div>

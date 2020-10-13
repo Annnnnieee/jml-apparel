@@ -28,7 +28,7 @@ function App() {
         xs: 0,
         sm: 640,
         md: 1000,
-        lg: 1300,
+        lg: 1500,
         xl: 1920,
       },
     },
@@ -75,7 +75,7 @@ function App() {
   theme.typography.h2 = {
     fontFamily: "'Work Sans', sans-serif",
     fontSize: "2rem",
-    fontWeight: "normal",
+    fontWeight: "bold",
     [theme.breakpoints.only('md')]: {
       fontSize: "1.3rem",
     },

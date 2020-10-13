@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     introContainer: {
         maxWidth: "90%",
         margin: "auto",
-        marginBottom: "15px",
+        marginBottom: "2%",
     },
     itemContainer: {
         display: "flex",
@@ -35,10 +35,11 @@ const useStyles = makeStyles((theme) => ({
     },
     item: {
         background: "rgba(194, 194, 194, 0.2)",
-        padding: "3% 3% 3% 3%", // TODO fix this. 55 2 5
+        padding: "3% 4.5% 3% 4.5%", // TODO fix this. 55 2 5
         marginBottom: "10px",
-        flexGrow: 1,
-        flexShrink: 1,
+        [theme.breakpoints.down('xs')]: {
+            padding: "4% 4.5% 4% 4.5%",
+        },
     },
     images: {
         marginTop: "2%",
