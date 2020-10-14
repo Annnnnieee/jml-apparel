@@ -104,11 +104,11 @@ function Expo() {
             </div>
 
             <Typography variant="h2" className={classes.expoHeader}>2020 EVENTS</Typography>
-            <Grid container spacing={0} justify="center" >
+            <Grid container spacing={1} justify="center" >
                 {
                     events2020.map(event => (
                         <Grid container item xs={12} className={classes.expoItem} direction="row" >
-                            <Grid item xs={12} sm={5} className={classes.imgContainer}> {/* TODO this width is messed up*/}
+                            <Grid item xs={12} sm={5} className={classes.imgContainer}> 
                                 <img src={event.image} alt="event"/>
                             </Grid>
                             <Grid item xs={12} sm={7} className={classes.expoDescription}>
@@ -118,14 +118,13 @@ function Expo() {
                                     <Typography variant="h2">Location: {event.location}</Typography>
                                 </div>
                             </Grid>
-
                         </Grid>
                     ))
                 }
             </Grid>
 
             <Typography variant="h2" className={classes.expoHeader}>2021 EVENTS</Typography>
-            <Grid container spacing={0} justify="center" direction="row">
+            <Grid container spacing={1} justify="center" direction="row">
                 {
                     events2021.map(event => (
                         <Grid container xs={12} className={classes.expoItem} direction="row" >
