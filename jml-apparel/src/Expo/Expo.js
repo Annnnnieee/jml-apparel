@@ -107,7 +107,7 @@ function Expo() {
             <Grid container spacing={1} justify="center" >
                 {
                     events2020.map(event => (
-                        <Grid container item xs={12} className={classes.expoItem} direction="row" >
+                        <Grid container xs={12} className={classes.expoItem} direction="row" >
                             <Grid item xs={12} sm={5} className={classes.imgContainer}> 
                                 <img src={event.image} alt="event"/>
                             </Grid>
