@@ -45,16 +45,17 @@ function App() {
 
   theme.typography.h1 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "5rem",
-    fontWeight: "normal",
+    fontSize: "4.8rem",
+    fontWeight: "bold",
+    textTransform: "uppercase",
     [theme.breakpoints.only('md')]: {
-      fontSize: "3.5rem",
+      fontSize: "4.6rem",
     },
     [theme.breakpoints.only('sm')]: {
-      fontSize: '30px',
+      fontSize: '4.5rem',
     },
     [theme.breakpoints.only('xs')]: {
-      fontSize: '2.5rem',
+      fontSize: '3.5rem',
     },
   }
 

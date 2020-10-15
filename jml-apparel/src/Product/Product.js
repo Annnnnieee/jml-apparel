@@ -2,9 +2,8 @@ import React from 'react';
 import productCover from '../assets/product-title.jpg';
 import productCoverAlt from '../assets/product-alt-title.jpg';
 import { makeStyles } from '@material-ui/core/styles';
-import withWidth from '@material-ui/core/withWidth';
+import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
 import { Hidden } from '@material-ui/core';
-
 
 import elastics from '../assets/product-elastics01.jpg';
 import drawcords from '../assets/product-drawcords01.jpg';
@@ -12,6 +11,7 @@ import hangtags from '../assets/product-hangtags01.jpg';
 import labels from '../assets/product-labels01.jpg';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import CoverCard from '../CoverCard/CoverCard';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -74,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
         listStylePosition: "inside",
         padding: "0",
     },
-
 }));
 
 function Item(props) {
@@ -105,12 +104,7 @@ function Product(props) {
     return (
         <div className={classes.root}>
             <div className={classes.introductionContainer}>
-                <Hidden smDown>
-                    <img src={productCover} alt="product cover" />
-                </Hidden>
-                <Hidden mdUp>
-                    <img src={productCoverAlt} alt="product cover" />
-                </Hidden>
+                <CoverCard cover={productCover} coverAlt={productCoverAlt} title="product"/>
 
                 <div className={classes.introduction}>
                     <Typography variant="body1">
