@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { Hidden } from '@material-ui/core';
+import CoverCard from '../CoverCard/CoverCard';
+
 
 
 import QualityCover from '../assets/quality-title.jpg';
@@ -95,12 +97,7 @@ function Quality() {
     return (
         <div className={classes.root}>
             <div className={classes.introContainer}>
-                <Hidden smDown>
-                    <img src={QualityCover} alt="quality and sustainability cover" />
-                </Hidden>
-                <Hidden mdUp>
-                    <img src={QualityCoverAlt} alt="quality and sustainability cover" />
-                </Hidden>
+                <CoverCard cover={QualityCover} coverAlt={QualityCoverAlt} title="quality and sustainability"/>
                 <Typography variant="body1" className={classes.introduction}>
                     <p>We understand the importance of quality in your garment design process.
                     At JML, we are committed to supporting you in meeting and exceeding your expectations.

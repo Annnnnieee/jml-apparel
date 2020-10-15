@@ -9,6 +9,8 @@ import Paper from '@material-ui/core/Paper';
 import { Hidden } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import CoverCard from '../CoverCard/CoverCard';
+
 
 
 
@@ -96,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mapContainerSize: {
-   height: "100%",
+    height: "100%",
   },
 }));
 
@@ -104,8 +106,8 @@ const useStyles = makeStyles((theme) => ({
 
 function Iframe(props) {
   return (
-      <iframe src={props.src} width="100%" height="100%"/>
-      // <iframe src={props.src} height={props.height} width={props.width} />
+    <iframe src={props.src} width="100%" height="100%" />
+    // <iframe src={props.src} height={props.height} width={props.width} />
   )
 };
 
@@ -129,22 +131,15 @@ function Contact() {
 
   return (
     <div>
-
       <div className={classes.introContainer}>
-        <Hidden smDown>
-          <img src={contactCover} alt="contact cover" />
-        </Hidden>
-        <Hidden mdUp>
-          <img src={contactCoverAlt} alt="contact cover" />
-        </Hidden>
+        <CoverCard cover={contactCover} coverAlt={contactCoverAlt} title="Contact Us" />
       </div>
-
       <div>
         <Grid container className={classes.expoItem} >
           <Grid item xs={12} sm={4} >
             <div id="vancouverLocation" className={classes.mapContainerSize}></div>
           </Grid>
-          <Grid item xs={12} sm={8}  className={classes.expoDescription}>
+          <Grid item xs={12} sm={8} className={classes.expoDescription}>
             <div className={classes.filler}>
               <Typography variant="h2">NORTH AMERICA</Typography>
               <Typography variant="body2">
@@ -162,7 +157,7 @@ function Contact() {
             </div>
           </Grid>
         </Grid>
- 
+
         <Grid container xs={12} className={classes.expoItem} >
           <Grid item xs={12} sm={4} >
             <div id="shanghaiLocation" className={classes.mapContainerSize}></div>
@@ -187,7 +182,7 @@ function Contact() {
               </Typography>
             </div>
           </Grid>
-        </Grid> 
+        </Grid>
 
       </div>
     </div>

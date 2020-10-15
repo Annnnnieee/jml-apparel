@@ -5,6 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { Hidden } from '@material-ui/core';
+import CoverCard from '../CoverCard/CoverCard';
+
 
 
 import expoCover from '../assets/expo-title.jpg';
@@ -95,13 +97,10 @@ function Expo() {
     return ( // TODO repl{ace cover image based on size. 
         <div classesName={classes.root}>
             <div className={classes.introContainer}>
-                <Hidden smDown>
-                    <img src={expoCover} alt="expo cover" />
-                </Hidden>
-                <Hidden mdUp>
-                    <img src={expoCoverAlt} alt="expo cover" />
-                </Hidden>
+            <CoverCard cover={expoCover} coverAlt={expoCoverAlt} title="Expo and Conference"/>
+
             </div>
+
 
             <Typography variant="h2" className={classes.expoHeader}>2020 EVENTS</Typography>
             <Grid container spacing={1} justify="center" >

@@ -5,6 +5,8 @@ import Box from '@material-ui/core/Box';
 import { Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import CoverCard from '../CoverCard/CoverCard';
+
 
 
 import digitalCover from '../assets/digital-title.jpg';
@@ -86,12 +88,7 @@ function Digital() {
     return (
         <div className={classes.root}>
             <div className={classes.introContainer}>
-                <Hidden smDown>
-                    <img src={digitalCover} alt="expo cover" />
-                </Hidden>
-                <Hidden mdUp>
-                    <img src={digitalCoverAlt} alt="expo cover" />
-                </Hidden>
+                <CoverCard cover={digitalCover} coverAlt={digitalCoverAlt} title="Digital"/>
             </div>
             <Box className={classes.item} >
                 <Typography variant="h2" className={classes.itemTitle}>3D TRIMS LIBRARY</Typography>

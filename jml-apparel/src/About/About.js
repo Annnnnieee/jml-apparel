@@ -4,6 +4,8 @@ import { Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import CoverCard from '../CoverCard/CoverCard';
+
 
 
 import aboutCover from '../assets/about-title.jpg';
@@ -83,14 +85,7 @@ function About() {
     return (
         <div>
             <div className={classes.introContainer}>
-                <Hidden smDown>
-                    <img src={aboutCover} alt="about cover" />
-                </Hidden>
-                <Hidden mdUp>
-                    <img src={aboutCoverAlt} alt="about cover" />
-                </Hidden>
-
-
+                <CoverCard cover={aboutCover} coverAlt={aboutCoverAlt} title="about us"/>
 
                 <Grid container spacing={2} justify="right" className={classes.grid}>
 

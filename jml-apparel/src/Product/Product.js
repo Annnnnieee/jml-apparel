@@ -2,8 +2,7 @@ import React from 'react';
 import productCover from '../assets/product-title.jpg';
 import productCoverAlt from '../assets/product-alt-title.jpg';
 import { makeStyles } from '@material-ui/core/styles';
-import withWidth, { isWidthDown } from '@material-ui/core/withWidth';
-import { Hidden } from '@material-ui/core';
+import withWidth from '@material-ui/core/withWidth';
 
 import elastics from '../assets/product-elastics01.jpg';
 import drawcords from '../assets/product-drawcords01.jpg';
