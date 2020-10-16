@@ -3,6 +3,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { HashLink } from 'react-router-hash-link';
+import {SiteMap as site} from '../SiteMap'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     item: {
         padding: "1%",
     },
-    container:{
+    container: {
         background: "rgba(77, 77, 77, 1)",
         color: "white",
         paddingTop: "1rem",
@@ -36,21 +38,28 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-function Item({ title, list }) {
+const scrollWidthOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -80;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+}
+
+
+function Item({ item, list }) {
     const classes = useStyles();
 
     console.log(list);
     return (
         <div className={classes.item} >
-            <Typography variant="h3">{title}</Typography>
+            <Typography variant="h3">{item.title}</Typography>
             <Typography variant="subtitle1">
                 <ul className={classes.list} >
-                    {list.map((el) => <li>{el}</li>)}
+                    {list.map((el) => <li><HashLink scroll={scrollWidthOffset} to={`/${item.path}#${el.path}`}>{el.title}</HashLink></li>)}
                 </ul>
             </Typography>
         </div>
     )
-}
+    }
 
 function Footer() {
     const classes = useStyles();
@@ -59,35 +68,35 @@ function Footer() {
         <div className={classes.root}>
             <div className={classes.container}>
 
-            <Grid container 
-            direction="row"
-            alignItems="flex-start"
-            className={classes.grid}
-            sm={10}
-            >
-                <Grid container item xs={12} sm={5} md={1} className={classes.item} >
-                    <Grid item xs={12} >
-                        <Item title="Product" list={["Elastics", "Drawcords", "Hangtags", "Labels"]} />
+                <Grid container
+                    direction="row"
+                    alignItems="flex-start"
+                    className={classes.grid}
+                    sm={10}
+                >
+                    <Grid container item xs={12} sm={5} md={1} className={classes.item} >
+                        <Grid item xs={12} >
+                            <Item item={site.product} list={site.product.list} />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Item item={site.digital} list={site.digital.list} />
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12}>
-                        <Item title="Digital" list={["3D Trims Library", "RFID Products"]} />
+                    <Grid item xs={12} sm={5} md={2} className={classes.item} >
+                        <Item item={site.quality} list={site.quality.list} />
+                    </Grid>
+                    <Grid item xs={12} sm={5} md={3} className={classes.item} >
+                        <Item item={site.expo} list={site.expo.list} />
+                    </Grid>
+                    <Grid container item xs={12} sm={5} md={2} className={classes.item}>
+                        <Grid item xs={12}>
+                            <Item item={site.about} list={site.about.list} />
+                        </Grid>
+                        <Grid item xs={12} className={classes.item}>
+                            <Item item={site.contact} list={site.contact.list} />
+                        </Grid>
                     </Grid>
                 </Grid>
-                <Grid item xs={12} sm={5} md={2} className={classes.item} >
-                    <Item title="Quality &amp; Sustainability" list={["Bluesign System Partner", "Oeko-Tex Standard 100 Tested Products", "ISO9001 Certified Facility", "BV Accredited Lab", "GRS Certified"]} />
-                </Grid>
-                <Grid item xs={12} sm={5} md={3} className={classes.item} >
-                    <Item title="Expo &amp; Conference" list={["2020 JUL  IPSO (Shanghai)", "2020 NOV  Performance Days (Portland)", "2020 DEC  Performance Days (Munich)", "2021 JAN  Outdoor Retailer Winter (Denver)", "2021 APR  Performance Days (Munich)", "2021 JUN  Outdoor Retailer Summer (Denver)", "2021 NOV  Performance Days (Munich)"]} />
-                </Grid>
-                <Grid container item xs={12} sm={5} md={2} className={classes.item}>
-                    <Grid item xs={12}>
-                        <Item title="About Us" list={["Our Values, Mission, & Vision", "Our Workplace & Community"]} />
-                    </Grid>
-                    <Grid item xs={12} className={classes.item}>
-                        <Item title="Contact Us" list={["North America Office", "China Office"]} />
-                    </Grid>
-                </Grid>
-            </Grid>
             </div>
             <div className={classes.container2}><Typography variant="subtitle1" className={classes.item}> &#169; Copyright JML 2020. All rights reserved.</Typography> </div>
         </div>
