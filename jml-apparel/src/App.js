@@ -49,7 +49,7 @@ function App() {
     fontWeight: "bold",
     textTransform: "uppercase",
     [theme.breakpoints.only('md')]: {
-      fontSize: "3.9rem",
+      fontSize: "3.8rem",
     },
     [theme.breakpoints.only('sm')]: {
       fontSize: '3.7rem',

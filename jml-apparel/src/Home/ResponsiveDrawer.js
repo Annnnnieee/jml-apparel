@@ -16,6 +16,8 @@ import Button from '@material-ui/core/Button';
 import { Link as RouterLink } from 'react-router-dom';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
+import logo from '../assets/logo-svg.svg';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -133,7 +135,8 @@ function ResponsiveDrawer() {
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <div className={classes.title} >
-              <Button color="inherit" component={RouterLink} to="/">JML</Button>
+              <Button color="inherit" component={RouterLink} to="/"><img src={logo}></img></Button>
+             
             </div>
 
 

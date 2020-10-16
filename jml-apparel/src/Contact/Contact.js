@@ -100,13 +100,22 @@ const useStyles = makeStyles((theme) => ({
   mapContainerSize: {
     height: "100%",
   },
+  iframe: {
+    width: "100%",
+    height: "100%",
+    [theme.breakpoints.down('xs')]: {
+      height: "500px",
+    },
+  }
 }));
 
 
 
 function Iframe(props) {
+  const classes = useStyles();
+
   return (
-    <iframe src={props.src} width="100%" height="100%" />
+    <iframe src={props.src} className={classes.iframe} />
     // <iframe src={props.src} height={props.height} width={props.width} />
   )
 };
