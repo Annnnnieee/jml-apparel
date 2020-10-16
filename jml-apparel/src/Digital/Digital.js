@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
     item: {
         background: "rgba(194, 194, 194, 0.2)",
-        padding: "3% 4.5% 3% 4.5%", // TODO fix this. 55 2 5
+        padding: "3% 4.5% 3% 4.5%", 
         marginBottom: "10px",
         [theme.breakpoints.down('xs')]: {
             padding: "4% 4.5% 4% 4.5%",

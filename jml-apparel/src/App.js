@@ -37,10 +37,10 @@ function App() {
 
   theme.typography.fontFamily = "'Work Sans', sans-serif";
 
-  theme.typography.p = {
+  theme.typography.subtitle1 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "1rem",
-    fontWeight: "bold",
+    fontSize: "0.5rem",
+    fontWeight: "normal",
   }
 
   theme.typography.h1 = {
@@ -90,13 +90,13 @@ function App() {
 
   theme.typography.h3 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "1.1rem",
+    fontSize: "0.7rem",
     fontWeight: "normal",
     [theme.breakpoints.only('sm')]: {
-      fontSize: '1.1rem',
+      fontSize: '0.7rem',
     },
     [theme.breakpoints.only('xs')]: {
-      fontSize: '1.2rem',
+      fontSize: '0.7rem',
     },
   }
   theme.typography.body2 = theme.typography.body1;
