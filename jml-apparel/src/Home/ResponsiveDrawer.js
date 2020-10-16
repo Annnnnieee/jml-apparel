@@ -18,6 +18,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
 import logo from '../assets/logo-svg.svg';
 
+// color : #009C77;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,11 +51,18 @@ const useStyles = makeStyles((theme) => ({
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width: "100%"
+    width: "100%",
+    background: "#DCDCDC",
+
   },
   title: {
     flexGrow: 1,
     justifyContent: "left",
+  },
+  drawerItem: {
+    // color: "green",
+    fontWeight: "bold",
+    fontSize: "1rem",
   },
 }));
 
@@ -77,7 +85,7 @@ function ElevationScroll(props) {
 }
 
 function ListItemLink(props) {
-  const { primary, to } = props;
+  const { primary, to, classes} = props;
 
   const renderLink = React.useMemo(
     () =>
@@ -89,9 +97,10 @@ function ListItemLink(props) {
   );
   return (
     <li>
-      <ListItem button component={renderLink}>
+      <ListItem button classes={classes} component={renderLink}>
         <ListItemText primary={primary} />
       </ListItem>
+      <Divider style={{background: "white", height: "1.5px", width: "95%", margin: "auto"}}/>
     </li>
   );
 }
@@ -115,13 +124,13 @@ function ResponsiveDrawer() {
     <div onClick={handleDrawerToggle}>
       <div className={classes.toolbar} />
       <Divider />
-      <List>
-        <ListItemLink to="/product" primary="Product" />
-        <ListItemLink to="/digital" primary="Digital" />
-        <ListItemLink to="/quality-and-sustainability" primary="Quality &amp; Sustainability" />
-        <ListItemLink to="/expo-and-conference" primary="Expo &amp; Conference" />
-        <ListItemLink to="/about-us" primary="About Us" />
-        <ListItemLink to="/contact-us" primary="Contact Us" />
+      <List >
+        <ListItemLink to="/product" primary="Product" classes={{ root: classes.drawerItem}} />
+        <ListItemLink to="/digital" primary="Digital" classes={{ root: classes.drawerItem}} />
+        <ListItemLink to="/quality-and-sustainability" primary="Quality &amp; Sustainability" classes={{ root: classes.drawerItem}} />
+        <ListItemLink to="/expo-and-conference" primary="Expo &amp; Conference" classes={{ root: classes.drawerItem}} />
+        <ListItemLink to="/about-us" primary="About Us" classes={{ root: classes.drawerItem}} />
+        <ListItemLink to="/contact-us" primary="Contact Us" classes={{ root: classes.drawerItem}} />
       </List>
     </div>
   );
