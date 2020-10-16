@@ -16,9 +16,9 @@ import Button from '@material-ui/core/Button';
 import { Link as RouterLink } from 'react-router-dom';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
+
 import logo from '../assets/logo-svg.svg';
 
-// color : #009C77;
 
 const useStyles = makeStyles((theme) => ({
   root: {

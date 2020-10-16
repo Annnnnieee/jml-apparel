@@ -8,6 +8,9 @@ import Awards from './Awards';
 import NotableClients from './NotableClients';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import ContactUsButton from './ContactUsButton';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   introContainer: {
-    marginBottom: "1%",
+    // marginBottom: "1%",
     background: "rgba(194, 194, 194, 0.2)",
     padding: "0 2% 2.5% 2%",
     [theme.breakpoints.down('xs')]: {
@@ -34,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     paddingBottom: "0.5rem"
   },
+  button: {
+    background: "#009C77",
+  },
 
 }));
 
@@ -44,6 +50,8 @@ function Home() {
       <div className={classes.introContainer}>
         <Cover />
       </div>
+
+      <ContactUsButton component={RouterLink} to="/contact-us"> <Typography variant="body1">Contact our team for more details </Typography></ContactUsButton>
 
       <div className={classes.section}>
         <Typography variant="h1" className={classes.sectionTitle}>Product</Typography>
