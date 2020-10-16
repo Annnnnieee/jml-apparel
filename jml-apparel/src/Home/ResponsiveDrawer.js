@@ -116,8 +116,8 @@ function ResponsiveDrawer() {
       <List>
         <ListItemLink to="/product" primary="Product" />
         <ListItemLink to="/digital" primary="Digital" />
-        <ListItemLink to="/quality-and-sustainability" primary="Quality and Sustainability" />
-        <ListItemLink to="/expo-and-conference" primary="Expo and Conference" />
+        <ListItemLink to="/quality-and-sustainability" primary="Quality &amp; Sustainability" />
+        <ListItemLink to="/expo-and-conference" primary="Expo &amp; Conference" />
         <ListItemLink to="/about-us" primary="About Us" />
         <ListItemLink to="/contact-us" primary="Contact Us" />
       </List>
@@ -140,8 +140,8 @@ function ResponsiveDrawer() {
             <Hidden xsDown>
               <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/product">Product</Button>
               <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/digital">Digital</Button>
-              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/quality-and-sustainability">Quality and Sustainability</Button>
-              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/expo-and-conference">Expo and Conference</Button>
+              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/quality-and-sustainability">Quality &amp; Sustainability</Button>
+              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/expo-and-conference">Expo &amp; Conference</Button>
               <Button color="inherit" classes={{ root: classes.listItem,  text: classes.listItemText}} component={RouterLink} to="/about-us">About Us</Button>
               <Button color="inherit" classes={{ root: classes.listItem,  text: classes.listItemText}} component={RouterLink} to="/contact-us">Contact Us</Button>
             </Hidden>

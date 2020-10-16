@@ -16,20 +16,25 @@ const useStyles = makeStyles(() => ({
   root: {
     maxWidth: "90%",
     margin: "auto",
-    // background: "white",
+    paddingTop: "2%",
+    paddingBottom: "2%",
   },
   title: {
     textAlign: "center",
   },
-  awardsGrid: {
-    marginTop: "1%",
-    marginBottom: "1%",
-  },
-  item: {
-    display: "block",
-    margin: "auto",
-    
-  },
+  awards: {
+    display: "flex",
+    flexFlow: "row wrap",
+    justifyContent: "center", 
+    padding: 0,
+    margin: 0,
+    listStyle: "none",
+    "& img": {
+      maxWidth: "200px",
+      maxHeight: "auto",
+      padding: "1%"
+    },
+  }
 }));
 
 
@@ -37,9 +42,9 @@ function Item(props) {
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sm={6} md={2} >
+    <li >
       <img src={props.image} alt="award" className={classes.item} />
-    </Grid>
+    </li>
   )
 
 }
@@ -50,12 +55,12 @@ function Awards() {
 
   return (
     <div className={classes.root}>
-      <Grid container className={classes.awardsGrid} spacing={1} justify="center">
+      <ul className={classes.awards}>
         <Item image={Award01}/>
         <Item image={Award02}/>
         <Item image={Award03}/>
         <Item image={Award04}/>
-      </Grid>
+      </ul>
 
     </div>
   );

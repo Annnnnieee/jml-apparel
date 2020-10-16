@@ -97,7 +97,7 @@ function Quality() {
     return (
         <div className={classes.root}>
             <div className={classes.introContainer}>
-                <CoverCard cover={QualityCover} coverAlt={QualityCoverAlt} title="quality and sustainability"/>
+                <CoverCard cover={QualityCover} coverAlt={QualityCoverAlt} title="quality &amp; sustainability"/>
                 <Typography variant="body1" className={classes.introduction}>
                     <p>We understand the importance of quality in your garment design process.
                     At JML, we are committed to supporting you in meeting and exceeding your expectations.

@@ -16,18 +16,22 @@ const useStyles = makeStyles((theme) => ({
     },
     grid: {
         justifyContent: "center",
+        justify: "center",
+        margin: "auto",
     },
     item: {
-        // maxWidth: "12rem",
-        // minWidth: "0rem", 
+        padding: "1%",
     },
     container:{
         background: "rgba(77, 77, 77, 1)",
         color: "white",
+        paddingTop: "1rem",
     },
     container2: {
         background: "rgba(51, 51, 51, 1)",
         color: "white",
+        paddingTop: "1%",
+        paddingBottom: "1%"
     },
 
 }))
@@ -37,7 +41,7 @@ function Item({ title, list }) {
 
     console.log(list);
     return (
-        <div >
+        <div className={classes.item} >
             <Typography variant="h3">{title}</Typography>
             <Typography variant="subtitle1">
                 <ul className={classes.list} >
@@ -59,8 +63,9 @@ function Footer() {
             direction="row"
             alignItems="flex-start"
             className={classes.grid}
+            sm={10}
             >
-                <Grid container item xs={12} sm={5} md={3} className={classes.item} >
+                <Grid container item xs={12} sm={5} md={1} className={classes.item} >
                     <Grid item xs={12} >
                         <Item title="Product" list={["Elastics", "Drawcords", "Hangtags", "Labels"]} />
                     </Grid>
@@ -68,15 +73,15 @@ function Footer() {
                         <Item title="Digital" list={["3D Trims Library", "RFID Products"]} />
                     </Grid>
                 </Grid>
-                <Grid item xs={12} sm={5} md={3} className={classes.item} >
-                    <Item title="Quality and Sustainability" list={["Bluesign System Partner", "Oeko-Tex Standard 100 Tested Products", "ISO9001 Certified Facility", "BV Accredited Lab", "GRS Certified"]} />
+                <Grid item xs={12} sm={5} md={2} className={classes.item} >
+                    <Item title="Quality &amp; Sustainability" list={["Bluesign System Partner", "Oeko-Tex Standard 100 Tested Products", "ISO9001 Certified Facility", "BV Accredited Lab", "GRS Certified"]} />
                 </Grid>
                 <Grid item xs={12} sm={5} md={3} className={classes.item} >
-                    <Item title="Expo and Conference" list={["2020 JUL \t IPSO (Shanghai)", "2020 NOV \t Performance Days (Portland)", "2020 DEC \t Performance Days (Munich)", "2021 JAN \t Outdoor Retailer Winter (Denver)", "2021 APR \t Performance Days (Munich)", "2021 JUN \t Outdoor Retailer Summer (Denver)", "2021 NOV \t Performance Days (Munich)"]} />
+                    <Item title="Expo &amp; Conference" list={["2020 JUL  IPSO (Shanghai)", "2020 NOV  Performance Days (Portland)", "2020 DEC  Performance Days (Munich)", "2021 JAN  Outdoor Retailer Winter (Denver)", "2021 APR  Performance Days (Munich)", "2021 JUN  Outdoor Retailer Summer (Denver)", "2021 NOV  Performance Days (Munich)"]} />
                 </Grid>
-                <Grid container item xs={12} sm={5} md={3} className={classes.item}>
+                <Grid container item xs={12} sm={5} md={2} className={classes.item}>
                     <Grid item xs={12}>
-                        <Item title="About Us" list={["Our Values, Mission, and Vision", "Our Workplace and Community"]} />
+                        <Item title="About Us" list={["Our Values, Mission, & Vision", "Our Workplace & Community"]} />
                     </Grid>
                     <Grid item xs={12} className={classes.item}>
                         <Item title="Contact Us" list={["North America Office", "China Office"]} />
@@ -84,7 +89,7 @@ function Footer() {
                 </Grid>
             </Grid>
             </div>
-            <div className={classes.container2}><Typography variant="subtitle1" className={classes.item}> Copyright JML 2020. All rights reserved.</Typography> </div>
+            <div className={classes.container2}><Typography variant="subtitle1" className={classes.item}> &#169; Copyright JML 2020. All rights reserved.</Typography> </div>
         </div>
     );
 }

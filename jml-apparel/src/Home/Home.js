@@ -54,7 +54,7 @@ function Home() {
         <Digital />
       </div>
       <div className={classes.section}>
-        <Typography variant="h1" className={classes.sectionTitle}>Quality and Sustainability</Typography>
+        <Typography variant="h1" className={classes.sectionTitle}>Quality &amp; Sustainability</Typography>
         <Quality />
       </div>
       <Awards />

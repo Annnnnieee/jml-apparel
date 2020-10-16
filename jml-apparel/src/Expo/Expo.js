@@ -97,7 +97,7 @@ function Expo() {
     return ( // TODO repl{ace cover image based on size. 
         <div classesName={classes.root}>
             <div className={classes.introContainer}>
-            <CoverCard cover={expoCover} coverAlt={expoCoverAlt} title="Expo and Conference"/>
+            <CoverCard cover={expoCover} coverAlt={expoCoverAlt} title="Expo &amp; Conference"/>
 
             </div>
 

@@ -97,7 +97,7 @@ function About() {
                     </Grid>
                     <Grid item xs={12} sm={12} md={10} >
                         <div className={classes.introduction}>
-                            <Typography variant="h2">OUR WORKPLACE and COMMUNITY</Typography>
+                            <Typography variant="h2">OUR WORKPLACE &amp; COMMUNITY</Typography>
                             <Typography variant="body2">
                                 <p>We take corporate responsibility seriously.</p>
                                 <p>Our world-wide sales group works closely with an
@@ -124,7 +124,7 @@ function About() {
                     </Grid>
                     <Grid item xs={12} sm={9} md={10} >
                         <div className={classes.introduction}>
-                            <Typography variant="h2">OUR CORE VALUES, VISION, and MISSION</Typography>
+                            <Typography variant="h2">OUR CORE VALUES, VISION, &amp; MISSION</Typography>
                             <Typography variant="body2">
                                 <p>OUR CORE VALUES</p>
                                 <ul>
