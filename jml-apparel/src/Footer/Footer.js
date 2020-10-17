@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import { HashLink } from 'react-router-hash-link';
 import {SiteMap as site} from '../SiteMap'
 
+import {HashLinkWithScroll} from '../HashLinkWithScroll/HashLinkWithScroll';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         // display: "flex",
@@ -38,13 +40,6 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-const scrollWidthOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const yOffset = -80;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
-}
-
-
 function Item({ item, list }) {
     const classes = useStyles();
 
@@ -54,7 +49,7 @@ function Item({ item, list }) {
             <Typography variant="h3">{item.title}</Typography>
             <Typography variant="subtitle1">
                 <ul className={classes.list} >
-                    {list.map((el) => <li><HashLink scroll={scrollWidthOffset} to={`/${item.path}#${el.path}`}>{el.title}</HashLink></li>)}
+                    {list.map((el) => <li><HashLinkWithScroll to={`/${item.path}#${el.path}`}>{el.title}</HashLinkWithScroll></li>)}
                 </ul>
             </Typography>
         </div>

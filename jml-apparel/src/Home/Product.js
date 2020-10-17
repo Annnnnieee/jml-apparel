@@ -1,5 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+import ButtonBase from '@material-ui/core/ButtonBase';
+
+
 
 import Elastics from '../assets/lp-product01.jpg';
 import Drawcords from '../assets/lp-product02.jpg';
@@ -9,6 +14,7 @@ import Labels from '../assets/lp-product04.jpg';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import { HashLinkWithScroll as HashLink } from '../HashLinkWithScroll/HashLinkWithScroll';
 
 import CustomCard from './CustomCard';
 
@@ -48,17 +54,33 @@ function Product(props) {
   return (
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={getGridListCols()}>
-        <GridListTile style={{height: "100%"}} key="Elastics">
-          <CustomCard image={Elastics} title="Elastics" ></CustomCard>
+        <GridListTile style={{ height: "100%" }} key="Elastics">
+          <ButtonBase
+            component={HashLink}
+            to="/product#elastics">
+            <CustomCard image={Elastics} title="Elastics" />
+          </ButtonBase>
         </GridListTile>
-        <GridListTile  style={{height: "100%"}} key="Drawcords">
-          <CustomCard image={Drawcords} title="Drawcords" ></CustomCard>
+        <GridListTile style={{ height: "100%" }} key="Drawcords">
+          <ButtonBase
+            component={HashLink}
+            to="/product#drawcords">
+            <CustomCard image={Drawcords} title="Drawcords" />
+          </ButtonBase>
         </GridListTile>
-        <GridListTile  style={{height: "100%"}} key="Hangtags">
-          <CustomCard image={Hangtags} title="Hangtags" ></CustomCard>
+        <GridListTile style={{ height: "100%" }} key="Hangtags">
+          <ButtonBase
+            component={HashLink}
+            to="/product#hangtags">
+            <CustomCard image={Hangtags} title="Hangtags" />
+          </ButtonBase>
         </GridListTile>
-        <GridListTile  style={{height: "100%"}} key="Labels">
-          <CustomCard image={Labels} title="Labels" ></CustomCard>
+        <GridListTile style={{ height: "100%" }} key="Labels">
+          <ButtonBase
+            component={HashLink}
+            to="/product#labels">
+            <CustomCard image={Labels} title="Labels" />
+          </ButtonBase>
         </GridListTile>
       </GridList>
     </div>
