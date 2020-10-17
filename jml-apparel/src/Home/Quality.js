@@ -8,31 +8,59 @@ import Grid from '@material-ui/core/Grid';
 import CustomCard from './CustomCard';
 import Carousel from 'react-material-ui-carousel'
 
+import ButtonBase from '@material-ui/core/ButtonBase';
+import { HashLinkWithScroll as HashLink } from '../HashLinkWithScroll/HashLinkWithScroll';
+
+
 function Quality() {
   return (
     <div>
       <Hidden smDown>
         <Grid container className="quality-section" spacing={1} justify="center">
           <Grid item xs={4}>
-            <CustomCard image={quality01}></CustomCard>
+            <ButtonBase
+              component={HashLink}
+              to="/quality-and-sustainability#bluesign-system-partner">
+              <CustomCard image={quality01} />
+            </ButtonBase>
           </Grid>
           <Grid item xs={4}>
-            <CustomCard image={quality02}></CustomCard>
+            <ButtonBase
+              component={HashLink}
+              to="/quality-and-sustainability#bv-accredited-lab">
+              <CustomCard image={quality02} />
+            </ButtonBase>
           </Grid>
           <Grid item xs={4}>
-            <CustomCard image={quality03}></CustomCard>
+            <ButtonBase
+              component={HashLink}
+              to="/quality-and-sustainability#grs-certified">
+              <CustomCard image={quality03} />
+            </ButtonBase>
           </Grid>
         </Grid>
       </Hidden>
 
       <Hidden mdUp>
         <Carousel>
-          <CustomCard image={quality01}></CustomCard>
-          <CustomCard image={quality02}></CustomCard>
-          <CustomCard image={quality03}></CustomCard>
+          <ButtonBase
+            component={HashLink}
+            to="/quality-and-sustainability#bluesign-system-partner">
+            <CustomCard image={quality01} />
+          </ButtonBase>
+          <ButtonBase
+            component={HashLink}
+            to="/quality-and-sustainability#bv-accredited-lab">
+            <CustomCard image={quality02} />
+          </ButtonBase>
+          <ButtonBase
+            component={HashLink}
+            to="/quality-and-sustainability#grs-certified">
+            <CustomCard image={quality03} />
+          </ButtonBase>
         </Carousel>
       </Hidden>
-    </div>
+    </div >
   );
 }
 
