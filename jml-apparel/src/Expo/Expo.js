@@ -4,7 +4,6 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Hidden } from '@material-ui/core';
 import CoverCard from '../CoverCard/CoverCard';
 
 
@@ -81,17 +80,17 @@ const useStyles = makeStyles((theme) => ({
 function Expo() {
     const events2020 =
         [
-            { image: expo2020ipso, title: "IPSO", date: "July 2020", location: "Shanghai China" },
-            { image: expo2020PerformanceMunich, title: "Performance Days", date: "November 18-19, 2020", location: "Portland, Oregon, USA" },
-            { image: expo2020PerformancePortland, title: "Performance Days", date: "December 9-10, 2020", location: "Munich, Germany" },
+            { image: expo2020ipso, title: "IPSO", date: "July 2020", location: "Shanghai China", path: "2020-jul-ispo-shanghai" },
+            { image: expo2020PerformanceMunich, title: "Performance Days", date: "November 18-19, 2020", location: "Portland, Oregon, USA", path: "2020-nov-performance-days-portland" },
+            { image: expo2020PerformancePortland, title: "Performance Days", date: "December 9-10, 2020", location: "Munich, Germany", path: "2020-dec-performance-days-munich" },
         ]
 
     const events2021 =
         [
-            { image: expo2021ORWinter, title: "Outdoor Retailer", date: "January 27-29, 2021", location: "Denver, Colorado, USA" },
-            { image: expo2021performanceSummerMunich, title: "Performance Days", date: "April 28-29, 2021", location: "Munich, Germany" },
-            { image: expo2021ORSummer, title: "Outdoor Retailer", date: "June 15-17, 2021", location: "Denver, Colorado, USA" },
-            { image: expo2021performanceWinterMunich, title: "Performance Days", date: "November, 2021", location: "Munich, Germany" }, // TODO no date?
+            { image: expo2021ORWinter, title: "Outdoor Retailer", date: "January 27-29, 2021", location: "Denver, Colorado, USA", path: "2021-jan-outdoor-retailer-winter-denver" },
+            { image: expo2021performanceSummerMunich, title: "Performance Days", date: "April 28-29, 2021", location: "Munich, Germany", path: "2021-apr-performance-days-munich" },
+            { image: expo2021ORSummer, title: "Outdoor Retailer", date: "June 15-17, 2021", location: "Denver, Colorado, USA", path: "2021-jun-outdoor-retailer-summer-denver"  },
+            { image: expo2021performanceWinterMunich, title: "Performance Days", date: "November, 2021", location: "Munich, Germany", path: "2021-nov-performance-days-munich" }, // TODO no date?
         ]
     const classes = useStyles();
     return ( // TODO repl{ace cover image based on size. 
@@ -112,7 +111,7 @@ function Expo() {
                             </Grid>
                             <Grid item xs={12} sm={7} className={classes.expoDescription}>
                                 <div>
-                                    <Typography variant="h2" className={classes.itemTitle}>{event.title}</Typography>
+                                    <Typography variant="h2" className={classes.itemTitle} id={event.path}>{event.title}</Typography>
                                     <Typography variant="h2">Date: {event.date}</Typography>
                                     <Typography variant="h2">Location: {event.location}</Typography>
                                 </div>
@@ -132,7 +131,7 @@ function Expo() {
                             </Grid>
                             <Grid item xs={12} sm={7} className={classes.expoDescription}>
                                 <div>
-                                    <Typography variant="h2" className={classes.itemTitle}>{event.title}</Typography>
+                                    <Typography variant="h2" className={classes.itemTitle} id={event.path}>{event.title}</Typography>
                                     <Typography variant="h2">Date: {event.date}</Typography>
                                     <Typography variant="h2">Location: {event.location}</Typography>
                                 </div>

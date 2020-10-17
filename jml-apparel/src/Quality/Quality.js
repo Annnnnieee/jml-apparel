@@ -3,7 +3,6 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Hidden } from '@material-ui/core';
 import CoverCard from '../CoverCard/CoverCard';
 
 
@@ -86,11 +85,11 @@ const useStyles = makeStyles((theme) => ({
 function Quality() {
 
     const certifications = [
-        { name: "Bluesign System Partner", imageSrc: BluesignPartner, description: "Holistic approach, BLUESIGN traces each textile’s path along the manufacturing process, making improvements at every stage from factory floor to finished product.", link: "www.bluesign.com" },
-        { name: "Oeko-Tex Standard 100 Tested Products", imageSrc: oekotexStandard, description: "The products have been tested and certified to be free from harmful levels of more than 100 substances known to be harmful to human health.", link: "www.oeko-tex.com" },
-        { name: "ISO 9001 Certified Facilities", imageSrc: iso9001, description: "The standard to demonstrate the ability to consistently provide products and services that meet customer and regulatory requirements.", link: "www.iso.org" },
-        { name: "BV Accredited Lab", imageSrc: bvAccreditedLab, description: "Our labs are BV accredited and can conduct tests according to ISO, AATCC and JIS standards.", link: "www.bureuveritas.com" },
-        { name: "GRS Certified", imageSrc: grsCertified, description: "The GRS is an international, voluntary, full product standard that sets out requirements for third-party certification of recycled content, chain of custody, social and environmental practices and chemical restrictions.  The goal of the GRS is to increase use of recycled materials in products and reduce/eliminate the harm caused by its production.", link: "www.textileexchange.org" }
+        { name: "Bluesign System Partner", imageSrc: BluesignPartner, description: "Holistic approach, BLUESIGN traces each textile’s path along the manufacturing process, making improvements at every stage from factory floor to finished product.", link: "www.bluesign.com", path: "bluesign-system-partner" },
+        { name: "Oeko-Tex Standard 100 Tested Products", imageSrc: oekotexStandard, description: "The products have been tested and certified to be free from harmful levels of more than 100 substances known to be harmful to human health.", link: "www.oeko-tex.com", path: "oeko-tex-standard-100-tested-products" },
+        { name: "ISO 9001 Certified Facilities", imageSrc: iso9001, description: "The standard to demonstrate the ability to consistently provide products and services that meet customer and regulatory requirements.", link: "www.iso.org", path: "iso9001-certified-facility" },
+        { name: "BV Accredited Lab", imageSrc: bvAccreditedLab, description: "Our labs are BV accredited and can conduct tests according to ISO, AATCC and JIS standards.", link: "www.bureuveritas.com", path: "bv-accredited-lab" },
+        { name: "GRS Certified", imageSrc: grsCertified, description: "The GRS is an international, voluntary, full product standard that sets out requirements for third-party certification of recycled content, chain of custody, social and environmental practices and chemical restrictions.  The goal of the GRS is to increase use of recycled materials in products and reduce/eliminate the harm caused by its production.", link: "www.textileexchange.org", path: "grs-certified" }
     ]
     const classes = useStyles();
 
@@ -123,7 +122,7 @@ function Quality() {
                     {
                         certifications.map(cert => (
                             <Grid container item xs={12} className={classes.expoItem} direction="row" >
-                                <Grid item xs={12} sm={5} className={classes.imgContainer}>
+                                <Grid item xs={12} sm={5} className={classes.imgContainer} id={cert.path}>
                                     <img src={cert.imageSrc} alt="quality or sustainability representative" />
                                 </Grid>
                                 <Grid item xs={12} sm={7} className={classes.expoDescription}>

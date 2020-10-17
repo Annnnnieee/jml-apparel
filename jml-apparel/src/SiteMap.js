@@ -17,7 +17,7 @@ export const SiteMap = {
             ]
     },
    quality: {
-        title: "Quality \&amp; Sustainability", path: "quality-and-sustainability", list:
+        title: "Quality & Sustainability", path: "quality-and-sustainability", list:
             [
                 { title: "Bluesign System Partner", path: "bluesign-system-partner" },
                 { title: "Oeko-Tex Standard 100 Tested Products", path: "oeko-tex-standard-100-tested-products" },
@@ -27,7 +27,7 @@ export const SiteMap = {
             ]
     },
    expo: {
-        title: "Expo \&amp; Conference", path: "expo-and-conference", list:
+        title: "Expo & Conference", path: "expo-and-conference", list:
             [
                 { title: "2020 JUL ISPO (Shanghai)", path: "2020-jul-ispo-shanghai" },
                 { title: "2020 NOV Performance Days (Portland)", path: "2020-nov-performance-days-portland" },

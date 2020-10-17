@@ -2,7 +2,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import { Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CoverCard from '../CoverCard/CoverCard';
@@ -91,7 +90,7 @@ function Digital() {
                 <CoverCard cover={digitalCover} coverAlt={digitalCoverAlt} title="Digital"/>
             </div>
             <Box className={classes.item} >
-                <Typography variant="h2" className={classes.itemTitle}>3D TRIMS LIBRARY</Typography>
+                <Typography variant="h2" className={classes.itemTitle} id="3d-trims-library">3D TRIMS LIBRARY</Typography>
                 <Typography variant="body2" className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -114,7 +113,7 @@ function Digital() {
             </Box>
 
             <Box className={classes.item}>
-                <Typography variant="h2" className={classes.itemTitle}>RFID PRODUCTS</Typography>
+                <Typography variant="h2" className={classes.itemTitle} id="rfid-products">RFID PRODUCTS</Typography>
                 <Typography variant="body2" className={classes.description}>Radio-Frequency Identification (RFID) maximizes efficiency
                 in logistics and improve inventory management. RFID technology
                 encodes and imprints data to convert inlays into RFID tags,

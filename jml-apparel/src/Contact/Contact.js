@@ -1,23 +1,13 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom'
-import contactCover from '../assets/contact-title.jpg'
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
-import { Hidden } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import CoverCard from '../CoverCard/CoverCard';
 
-
-
-
-
+import contactCover from '../assets/contact-title.jpg'
 import contactCoverAlt from '../assets/contact-alt-title.jpg';
-import contactVancouver from '../assets/contact-vancouver01.jpg';
-import contactShanghai from '../assets/contact-shanghai01.jpg';
 
 const vancouverLocation = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d248679.1221890472!2d-123.24164222992822!3d49.17479922966847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x570839eedffe39d1!2sJML%20Trading%20Company%20Ltd.!5e0!3m2!1sen!2sca!4v1602622112218!5m2!1sen!2sca"
 const shanghaiLocation = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d323045.2304786843!2d121.53034776301561!3d31.331364755518106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b275fa5df677db%3A0xf464be57a952f85e!2z5LiK5rW35o235aqa5bCU5pyN6aWw5pyJ6ZmQ5YWs5Y-4!5e0!3m2!1sen!2sca!4v1602621758376!5m2!1sen!2sca";
@@ -150,7 +140,7 @@ function Contact() {
           </Grid>
           <Grid item xs={12} sm={8} className={classes.expoDescription}>
             <div className={classes.filler}>
-              <Typography variant="h2">NORTH AMERICA</Typography>
+              <Typography variant="h2" id="north-america-office">NORTH AMERICA</Typography>
               <Typography variant="body2">
                 <p>
                   <div>JML Trading Company Ltd.</div>
@@ -173,7 +163,7 @@ function Contact() {
           </Grid>
           <Grid item xs={12} sm={8} className={classes.expoDescription}>
             <div>
-              <Typography variant="h2">CHINA</Typography>
+              <Typography variant="h2" id="china-office">CHINA</Typography>
               <Typography variant="body2">
                 <p>
                   <div>上海捷媚尔服饰有限公司</div>

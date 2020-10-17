@@ -79,7 +79,7 @@ function Item(props) {
     const classes = useStyles();
     return (
         <Grid container item xs={12} sm={6} spacing={1} className={classes.item} justify="space-between">
-            <Grid item xs={12} sm={5} md={6} >
+            <Grid item xs={12} sm={5} md={6} id={props.id}>
                 <img src={props.imgSrc} className={classes.itemImage} alt="product offering" />
             </Grid>
             <Grid item xs={12} sm={7} md={6} >
@@ -139,6 +139,7 @@ function Product(props) {
 
                 <Grid container className={classes.itemsContainer} justify="space-between"  >
                     <Item
+                        id="elastics"
                         imgSrc={elastics}
                         title="Elastics"
                         description={[
@@ -152,6 +153,7 @@ function Product(props) {
                         ]} />
 
                     <Item
+                        id="drawcords"
                         imgSrc={drawcords}
                         title="Drawcords"
                         description={[
@@ -163,6 +165,7 @@ function Product(props) {
                             "Non-stretch"
                         ]} />
                     <Item
+                        id="hangtags"
                         imgSrc={hangtags}
                         title="Hangtags"
                         description={[
@@ -171,6 +174,7 @@ function Product(props) {
                             "Shopping bags"
                         ]} />
                     <Item
+                        id="labels"
                         imgSrc={labels}
                         title="Labels"
                         description={[
