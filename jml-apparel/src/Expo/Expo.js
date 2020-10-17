@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
 function Expo() {
     const events2020 =
         [
-            { image: expo2020ipso, title: "IPSO", date: "July 2020", location: "Shanghai China", path: "2020-jul-ispo-shanghai" },
+            { image: expo2020ipso, title: "ISPO", date: "July 2020", location: "Shanghai China", path: "2020-jul-ispo-shanghai" },
             { image: expo2020PerformanceMunich, title: "Performance Days", date: "November 18-19, 2020", location: "Portland, Oregon, USA", path: "2020-nov-performance-days-portland" },
             { image: expo2020PerformancePortland, title: "Performance Days", date: "December 9-10, 2020", location: "Munich, Germany", path: "2020-dec-performance-days-munich" },
         ]

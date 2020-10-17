@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { HashLink } from 'react-router-hash-link';
 import {SiteMap as site} from '../SiteMap'
+import Link from '@material-ui/core/Link';
+
 
 import {HashLinkWithScroll} from '../HashLinkWithScroll/HashLinkWithScroll';
 
@@ -37,7 +39,9 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "1%",
         paddingBottom: "1%"
     },
-
+   "& a:-webkit-any-link": {
+    color: "#ffffff",
+    },
 }))
 
 function Item({ item, list }) {
@@ -49,7 +53,7 @@ function Item({ item, list }) {
             <Typography variant="h3">{item.title}</Typography>
             <Typography variant="subtitle1">
                 <ul className={classes.list} >
-                    {list.map((el) => <li><HashLinkWithScroll to={`/${item.path}#${el.path}`}>{el.title}</HashLinkWithScroll></li>)}
+                    {list.map((el) => <li><Link color="inherit" underlineNone component={HashLinkWithScroll} to={`/${item.path}#${el.path}`}>{el.title}</Link></li>)}
                 </ul>
             </Typography>
         </div>

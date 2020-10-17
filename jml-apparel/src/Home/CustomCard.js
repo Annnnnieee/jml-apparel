@@ -11,21 +11,22 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles(() => ({
     actionArea: {
         borderRadius: 0,
-        transition: '0.2s',
-        '&:hover': {
-            transform: 'scale(1.005)',
-        },
+        overflow: "none",
     },
     card: {
+        transition: '0.2s',
+        '&:hover': {
+            transform: 'scale(1.003)',
+        },
         //  minWidth: 256,
         borderRadius: 0,
         boxShadow: 'none',
-        '&:hover': {
-            boxShadow: `0 3px 6px 0 ${Color("grey")
-                .rotate(-12)
-                .darken(0.1)
-                .fade(0.5)}`,
-        },
+        // '&:hover': {
+        //     boxShadow: `0 3px 6px 0 ${Color("grey")
+        //         .rotate(-12)
+        //         .darken(0.1)
+        //         .fade(0.5)}`,
+        // },
     },
     content: {
         background: "rgba(77, 77, 77, 1)",
