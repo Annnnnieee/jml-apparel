@@ -79,6 +79,16 @@ const useStyles = makeStyles((theme) => ({
             flexDirection: "column-reverse",
         },
     },
+    list: {
+        display: "flex",
+        flexDirection: "column",
+        margin: 0,
+        // listStylePosition: "inside",
+        // paddingLeft: 0,
+    },
+    "& li": {
+        display: "inline"
+    }
 }));
 
 function About() {
@@ -88,7 +98,7 @@ function About() {
             <div className={classes.introContainer}>
                 <CoverCard cover={aboutCover} coverAlt={aboutCoverAlt} title="about us"/>
 
-                <Grid container spacing={2} justify="right" className={classes.grid}>
+                <Grid container spacing={3} justify="right" className={classes.grid}>
 
                     <Grid item xs={12} sm={0} md={2} direction="column" justify="space-between" >
                         <Hidden only="sm">
@@ -119,29 +129,29 @@ function About() {
             </div>
 
             <div className={classes.item}>
-                <Grid container spacing={2} justify="right"  className={classes.itemsGrid}>
+                <Grid container spacing={3} justify="right"  className={classes.itemsGrid}>
                     <Grid item xs={12} sm={3} md={2} direction="column" justify="space-around" >
                         <img src={about03} alt="our community" />
                     </Grid>
                     <Grid item xs={12} sm={9} md={10} >
                         <div className={classes.introduction}>
-                            <Typography variant="h2" id="our-values">OUR CORE VALUES, VISION, &amp; MISSION</Typography>
-                            <Typography variant="body2">
-                                <p>OUR CORE VALUES</p>
-                                <ul>
+                           <Typography variant="h2" id="our-values">OUR CORE VALUES, VISION, &amp; MISSION</Typography> 
+                           <Typography variant="body2">
+                           <p> <div>OUR CORE VALUES</div>
+                                <ul className={classes.list}>
                                     <li>Integrity</li>
                                     <li>Passion</li>
                                     <li>Innovation</li>
                                     <li>Precision</li>
                                     <li>Satisfaction</li>
                                     <li>Continuous Improvement</li>
-                                </ul>
+                                </ul> </p>
 
-                                <p>OUR VISION</p>
-                                <p>To support brands to elevate their products</p>
+                                <div>OUR VISION</div>
+                                <ul className={classes.list}> <li>To support brands to elevate their products</li></ul>
 
-                                <p>OUR MISSION</p>
-                                <p>To provide premium innovative trims and flexible quality service to high end sports brands</p>
+                                <p><div>OUR MISSION</div>
+                                <ul className={classes.list}><li>To provide premium innovative trims and flexible quality service to high end sports brands</li></ul></p>
                             </Typography>
                         </div>
                     </Grid>
