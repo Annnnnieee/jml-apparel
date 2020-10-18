@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
     content: {
         position: 'absolute',
         color: "white",
-        zIndex: 2,
+        zIndex: 0,
         bottom: 0,
         width: '100%',
         padding: 0,
@@ -36,7 +36,7 @@ const useStyles = makeStyles(() => ({
             width: '100%',
             height: '64%',
             bottom: 0,
-            zIndex: 1,
+            zIndex: 0,
             //  background: 'linear-gradient(to top, #000, rgba(0,0,0,0))',
         },
     }
@@ -58,7 +58,7 @@ const CoverCard = ({ cover, coverAlt, title, width }) => {
                     coverPhoto
                 }
             />
-            <Box py={3} px={2} className={classes.content}>
+            <Box  className={classes.content}>
             <Typography variant="h1">{title}</Typography>  
             </Box>
         </Card>

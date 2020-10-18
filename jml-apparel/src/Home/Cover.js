@@ -1,5 +1,4 @@
 import React from 'react';
-import { Hidden } from '@material-ui/core';
 
 import Carousel from 'react-material-ui-carousel'
 

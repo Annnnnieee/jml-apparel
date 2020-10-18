@@ -5,8 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CoverCard from '../CoverCard/CoverCard';
 
-
-
 import QualityCover from '../assets/quality-title.jpg';
 import QualityCoverAlt from '../assets/quality-alt-title.jpg';
 import BluesignPartner from '../assets/quality-bluesign-system-partner.jpg';
@@ -110,8 +108,8 @@ function Quality() {
                     <ul>
                         <li>Our factories are ISO 9001:2000 certified</li>
                         <li>All our products meet Oeko-Tex Standard 100 test criteria</li>
-                        <li>Our labs are ITS accredited and can conduct tests according to ISO,
-                                AATCC and JIS standards</li>
+                        <li>Our labs are BV/ITS accredited and can conduct tests according to ISO,
+                                AATCC, BS, and JIS standards</li>
                     </ul>
                 </Typography>
 
