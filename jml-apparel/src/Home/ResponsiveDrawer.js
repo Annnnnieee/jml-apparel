@@ -15,6 +15,10 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link as RouterLink } from 'react-router-dom';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Portal from '@material-ui/core/Portal';
+
+
 
 import { NavHashLink } from 'react-router-hash-link';
 
@@ -93,16 +97,8 @@ function ElevationScroll(props) {
 }
 
 function ListItemLink(props) {
-  const { primary, to, classes, active } = props;
+  const { primary, to } = props;
 
-  const renderLink = React.useMemo(
-    () =>
-      React.forwardRef((itemProps, ref) => (
-        <RouterLink to={to} ref={ref} {...itemProps} />
-      ))
-    ,
-    [to],
-  );
   return (
     <li>
       <ListItem button component={NavHashLink}
@@ -124,7 +120,7 @@ ListItemLink.propTypes = {
 
 
 function NavItem(props) {
-  const {to} = props;
+  const { to } = props;
   const classes = useStyles();
 
   return (
@@ -135,24 +131,22 @@ function NavItem(props) {
       classes={{ root: classes.listItem, text: classes.listItemText }}
       component={NavHashLink}
       to={to}>
-     {props.children} </Button>
+      {props.children} </Button>
   )
 }
 
 function ResponsiveDrawer() {
   const classes = useStyles();
   const theme = useTheme();
-  // const location = useLocation();
-  // const  active= location.pathname == "/product" ? true : false
-  // let rootClass = classes.drawerItem;
-  // if(active){
-  //   rootClass = classes.selectedDrawerItem;
-  // }
-  //  console.log("1. active: " + active )
+  const container = React.useRef(null);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    setMobileOpen((prev) => !prev);
+  };
+
+  const handleClickAway = (event) => {
+    setMobileOpen(false);
   };
 
   const drawer = (
@@ -193,36 +187,48 @@ function ResponsiveDrawer() {
               <NavItem to="/contact-us">Contact Us</NavItem>
             </Hidden>
 
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              className={classes.menuButton}
-            >
-              <MenuIcon />
-            </IconButton>
+            <ClickAwayListener onClickAway={handleClickAway}>
+              <div>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  className={classes.menuButton}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Portal container={container.current}>
+                  <Hidden smUp implementation="css">
+                    <Drawer
+                      onBackdropClick={handleClickAway}
+                      className={classes.drawer}
+                      variant="temporary"
+                      anchor={theme.direction === 'rtl' ? 'left' : 'right'}
+                      open={mobileOpen}
+                      onClose={handleDrawerToggle} // TODO handleDrawerToggle when the screen size changes... not only on close. 
+                      classes={{
+                        paper: classes.drawerPaper,
+                      }}
+                      ModalProps={{
+                        keepMounted: true, // Better open performance on mobile.
+                      }}
+                    >
+                      {drawer}
+                    </Drawer>
+                  </Hidden>
+                </Portal>
+              </div>
+            </ClickAwayListener>
+
           </Toolbar>
         </AppBar>
       </ElevationScroll>
       {/* The implementation can be swapped with js to avoid SEO duplication of links. do we even need css */}
       <Hidden smUp implementation="css">
-        <Drawer
-          className={classes.drawer}
-          variant="temporary"
-          anchor={theme.direction === 'rtl' ? 'left' : 'right'}
-          open={mobileOpen}
-          onClose={handleDrawerToggle} // TODO handleDrawerToggle when the screen size changes... not only on close. 
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-        >
-          {drawer}
-        </Drawer>
+        <div ref={container} />
       </Hidden>
+
       <Toolbar />
     </div>
   );
