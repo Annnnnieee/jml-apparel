@@ -11,6 +11,9 @@ import feature03Alt from '../assets/lp-alt-feature03.jpg';
 import CoverCard from '../CoverCard/CoverCard';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { HashLinkWithScroll as HashLink } from '../HashLinkWithScroll/HashLinkWithScroll';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
 
 
 function Cover() {
@@ -21,23 +24,31 @@ function Cover() {
         </div>
     );
 
+    const CoverButton = withStyles((theme) => ({
+        root: {
+            display: "contents",
+            lineHeight: "1",
+        },
+    }))(Button);
+
     return (
+
         <Carousel>
-            <ButtonBase
+            <CoverButton classes={{ root: { display: "flex" } }}
                 component={HashLink}
                 to="/digital#3d-trims-library">
                 <CoverCard cover={feature01} coverAlt={feature01Alt} title={featureTitle} />
-            </ButtonBase>
-            <ButtonBase
+            </CoverButton>
+            <CoverButton
                 component={HashLink}
                 to="/quality-and-sustainability">
                 <CoverCard cover={feature02} coverAlt={feature02Alt} title="Quality &amp; Sustainability" />
-            </ButtonBase>
-            <ButtonBase
+            </CoverButton>
+            <CoverButton
                 component={HashLink}
                 to="/product">
                 <CoverCard cover={feature03} coverAlt={feature03Alt} title="Product" />
-            </ButtonBase>
+            </CoverButton>
         </Carousel>
     )
 }

@@ -21,7 +21,7 @@ import digitalRFID03 from '../assets/digital-RFID03.jpg';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: "flex",
+        // display: "flex",
         overflow: "hidden",
         flexDirection: "column",
     },

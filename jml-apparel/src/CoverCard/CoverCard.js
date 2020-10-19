@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -39,8 +39,16 @@ const useStyles = makeStyles(() => ({
             zIndex: 0,
             //  background: 'linear-gradient(to top, #000, rgba(0,0,0,0))',
         },
-    }
+    },
+    fixedRatio: {
+        paddingBottom: "38.88%",
+        display: "block",
+        position: "relative",
+        height: 0,
+        overflow: "hidden",
+    },
 }));
+
 
 const CoverCard = ({ cover, coverAlt, title, width }) => {
     let coverPhoto = cover;
@@ -48,20 +56,20 @@ const CoverCard = ({ cover, coverAlt, title, width }) => {
         coverPhoto = coverAlt
     }
     const classes = useStyles();
-    return (
 
-        <Card className={classes.card}>
-            <CardMedia
-                className="card-media"
-                component="img"
-                image={
-                    coverPhoto
-                }
-            />
-            <Box  className={classes.content}>
-            <Typography variant="h1">{title}</Typography>  
-            </Box>
-        </Card>
+    return (
+        <div className={classes.fixedRatio}>
+            <Card className={classes.card}>
+                <CardMedia
+                    className="card-media"
+                    component="img"
+                    image={coverPhoto}
+                />
+                <Box className={classes.content}>
+                    <Typography variant="h1">{title}</Typography>
+                </Box>
+            </Card>
+        </div>
     );
 };
 export default withWidth()(CoverCard);
