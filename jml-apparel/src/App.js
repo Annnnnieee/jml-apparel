@@ -19,6 +19,16 @@ import ResponsiveDrawer from './Home/ResponsiveDrawer';
 function App() {
   const theme = createMuiTheme({
     // props: {
+      overrides: {
+        MuiListItem: {
+          root: {
+            "&$selected": {
+              color: "red",
+              backgroundColor: "green",
+            }
+          }
+        }
+      },
     //   MuiButtonBase: {
     //     disableRipple: true,
     //   },

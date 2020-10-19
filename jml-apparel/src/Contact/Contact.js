@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
   expoDescription: {
     [theme.breakpoints.up('sm')]: {
-      paddingLeft: "5%"
+      paddingLeft: "3%",
     },
   },
   filler: {

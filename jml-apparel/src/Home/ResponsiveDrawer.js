@@ -16,6 +16,9 @@ import Button from '@material-ui/core/Button';
 import { Link as RouterLink } from 'react-router-dom';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
+import { NavHashLink } from 'react-router-hash-link';
+
+
 
 import logo from '../assets/logo-svg.svg';
 
@@ -33,12 +36,15 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 0,
     lineHeight: 1,
     borderRadius: 0,
-    letterSpacing: 0, 
+    letterSpacing: 0,
     textTransform: "none",
     fontWeight: "bold",
   },
   listItemText: {
-    padding: "0.2% 0.5% 0.2% 0.5%"
+    padding: "0.2% 0.5% 0.2% 0.5%",
+    "&:hover": {
+      color: "#009966",
+    },
   },
   menuButton: {
     [theme.breakpoints.up('sm')]: {
@@ -60,9 +66,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "left",
   },
   drawerItem: {
-    // color: "green",
     fontWeight: "bold",
     fontSize: "1rem",
+    "&:hover": {
+      color: "#009966",
+    }
   },
 }));
 
@@ -85,7 +93,7 @@ function ElevationScroll(props) {
 }
 
 function ListItemLink(props) {
-  const { primary, to, classes} = props;
+  const { primary, to, classes, active } = props;
 
   const renderLink = React.useMemo(
     () =>
@@ -97,10 +105,14 @@ function ListItemLink(props) {
   );
   return (
     <li>
-      <ListItem button classes={classes} component={renderLink}>
+      <ListItem button component={NavHashLink}
+        to={to}
+        activeClassName="selected"
+        activeStyle={{ color: '#009966' }}>
+
         <ListItemText primary={primary} />
       </ListItem>
-      <Divider style={{background: "white", height: "1.5px", width: "95%", margin: "auto"}}/>
+      <Divider style={{ background: "white", height: "1.5px", width: "95%", margin: "auto" }} />
     </li>
   );
 }
@@ -111,9 +123,32 @@ ListItemLink.propTypes = {
 };
 
 
+function NavItem(props) {
+  const {to} = props;
+  const classes = useStyles();
+
+  return (
+    <Button
+      color="inherit"
+      activeClassName="selected"
+      activeStyle={{ color: '#009966' }}
+      classes={{ root: classes.listItem, text: classes.listItemText }}
+      component={NavHashLink}
+      to={to}>
+     {props.children} </Button>
+  )
+}
+
 function ResponsiveDrawer() {
   const classes = useStyles();
   const theme = useTheme();
+  // const location = useLocation();
+  // const  active= location.pathname == "/product" ? true : false
+  // let rootClass = classes.drawerItem;
+  // if(active){
+  //   rootClass = classes.selectedDrawerItem;
+  // }
+  //  console.log("1. active: " + active )
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -125,12 +160,12 @@ function ResponsiveDrawer() {
       <div className={classes.toolbar} />
       <Divider />
       <List >
-        <ListItemLink to="/product" primary="Product" classes={{ root: classes.drawerItem}} />
-        <ListItemLink to="/digital" primary="Digital" classes={{ root: classes.drawerItem}} />
-        <ListItemLink to="/quality-and-sustainability" primary="Quality &amp; Sustainability" classes={{ root: classes.drawerItem}} />
-        <ListItemLink to="/expo-and-conference" primary="Expo &amp; Conference" classes={{ root: classes.drawerItem}} />
-        <ListItemLink to="/about-us" primary="About Us" classes={{ root: classes.drawerItem}} />
-        <ListItemLink to="/contact-us" primary="Contact Us" classes={{ root: classes.drawerItem}} />
+        <ListItemLink to="/product" primary="Product" classes={{ root: classes.drawerItem }} />
+        <ListItemLink to="/digital" primary="Digital" classes={{ root: classes.drawerItem }} />
+        <ListItemLink to="/quality-and-sustainability" primary="Quality &amp; Sustainability" classes={{ root: classes.drawerItem }} />
+        <ListItemLink to="/expo-and-conference" primary="Expo &amp; Conference" classes={{ root: classes.drawerItem }} />
+        <ListItemLink to="/about-us" primary="About Us" classes={{ root: classes.drawerItem }} />
+        <ListItemLink to="/contact-us" primary="Contact Us" classes={{ root: classes.drawerItem }} />
       </List>
     </div>
   );
@@ -145,17 +180,17 @@ function ResponsiveDrawer() {
           <Toolbar>
             <div className={classes.title} >
               <Button color="inherit" component={RouterLink} to="/"><img src={logo}></img></Button>
-             
+
             </div>
 
 
             <Hidden xsDown>
-              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/product">Product</Button>
-              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/digital">Digital</Button>
-              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/quality-and-sustainability">Quality &amp; Sustainability</Button>
-              <Button color="inherit" classes={{ root: classes.listItem, text: classes.listItemText}} component={RouterLink} to="/expo-and-conference">Expo &amp; Conference</Button>
-              <Button color="inherit" classes={{ root: classes.listItem,  text: classes.listItemText}} component={RouterLink} to="/about-us">About Us</Button>
-              <Button color="inherit" classes={{ root: classes.listItem,  text: classes.listItemText}} component={RouterLink} to="/contact-us">Contact Us</Button>
+              <NavItem to="/product">Product</NavItem>
+              <NavItem to="/digital">Digital</NavItem>
+              <NavItem to="/quality-and-sustainability">Quality &amp; Sustainability</NavItem>
+              <NavItem to="/expo-and-conference">Expo &amp; Conference</NavItem>
+              <NavItem to="/about-us">About Us</NavItem>
+              <NavItem to="/contact-us">Contact Us</NavItem>
             </Hidden>
 
             <IconButton
