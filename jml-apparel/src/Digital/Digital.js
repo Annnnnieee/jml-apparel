@@ -91,13 +91,10 @@ function Digital() {
             </div>
             <Box className={classes.item} >
                 <Typography variant="h2" className={classes.itemTitle} id="3d-trims-library">3D TRIMS LIBRARY</Typography>
-                <Typography variant="body2" className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                in culpa qui officia deserunt mollit anim id est laborum.</Typography>
+                <Typography variant="body2" className={classes.description}>
+                Cloud-based 3D soft trims library allows brands to utilize available 3D files to design and develop
+                 products in a digital ecosystem; provides compatible files for CLO, Browzwear and other digital software; reduces proto samples, 
+                 allows for rapid iteration and decision-making enhancement.</Typography>
 
                 <Grid container spacing={2} justify="right" className={classes.images}>
                     {
