@@ -43,12 +43,20 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: 0,
     textTransform: "none",
     fontWeight: "bold",
+    fontFamily: "'Work Sans', sans-serif",
   },
   listItemText: {
-    padding: "0.2% 0.5% 0.2% 0.5%",
+    padding: "0.3% 0.5% 0.3% 0.5%",
+    fontFamily: "'Work Sans', sans-serif",
+    [theme.breakpoints.up('md')]: {
+      marginRight: "0.7%",
+    },
     "&:hover": {
       color: "#009966",
     },
+  },
+  logoButtonText: {
+    padding: "0",
   },
   menuButton: {
     [theme.breakpoints.up('sm')]: {
@@ -60,22 +68,29 @@ const useStyles = makeStyles((theme) => ({
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
+  toolBarRegular: {
+    minWidth: "0px",
+  },
   drawerPaper: {
     width: "100%",
     background: "#DCDCDC",
-
   },
-  title: {
+  logo: {
     flexGrow: 1,
     justifyContent: "left",
   },
   drawerItem: {
     fontWeight: "bold",
+    //fontFamily: "'Work Sans', sans-serif",
     fontSize: "1rem",
     "&:hover": {
       color: "#009966",
     }
   },
+  logoImg: {
+    maxWidth: "130%",
+  },
+  
 }));
 
 
@@ -97,11 +112,14 @@ function ElevationScroll(props) {
 }
 
 function ListItemLink(props) {
-  const { primary, to } = props;
+  const { primary, to, classes } = props;
 
   return (
     <li>
-      <ListItem button component={NavHashLink}
+      <ListItem 
+        button 
+        component={NavHashLink}
+        classes={classes}
         to={to}
         activeClassName="selected"
         activeStyle={{ color: '#009966' }}>
@@ -171,9 +189,9 @@ function ResponsiveDrawer() {
       <ElevationScroll >
 
         <AppBar position="fixed" className={classes.appBar}>
-          <Toolbar>
-            <div className={classes.title} >
-              <Button color="inherit" component={RouterLink} to="/"><img src={logo}></img></Button>
+          <Toolbar classes={{regular: classes.toolBarRegular}}>
+            <div className={classes.logo} >
+              <Button color="inherit" component={RouterLink} classes={{text: classes.logoButtonText}} to="/"><img src={logo} className={classes.logoImg}></img></Button>
 
             </div>
 

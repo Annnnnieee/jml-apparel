@@ -13,7 +13,7 @@ import Box from '@material-ui/core/Box';
 
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     content: {
         position: 'absolute',
         color: "white",
@@ -46,9 +46,11 @@ const useStyles = makeStyles(() => ({
         position: "relative",
         height: 0,
         overflow: "hidden",
+        [theme.breakpoints.down('sm')]: {
+            paddingBottom: "133.38%",
+        },
     },
 }));
-
 
 const CoverCard = ({ cover, coverAlt, title, width }) => {
     let coverPhoto = cover;

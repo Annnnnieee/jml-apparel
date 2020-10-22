@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
         background: "rgba(77, 77, 77, 1)",
         color: "white",
         paddingTop: "1rem",
+        fontSize: "1rem",
     },
     container2: {
         background: "rgba(51, 51, 51, 1)",
@@ -73,7 +74,7 @@ function Footer() {
                     className={classes.grid}
                     sm={10}
                 >
-                    <Grid container item xs={12} sm={5} md={1} className={classes.item} >
+                    <Grid container item xs={12} sm={5} md={2} className={classes.item} >
                         <Grid item xs={12} >
                             <Item item={site.product} list={site.product.list} />
                         </Grid>
@@ -81,13 +82,13 @@ function Footer() {
                             <Item item={site.digital} list={site.digital.list} />
                         </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={5} md={2} className={classes.item} >
+                    <Grid item xs={12} sm={5} md={3} className={classes.item} >
                         <Item item={site.quality} list={site.quality.list} />
                     </Grid>
-                    <Grid item xs={12} sm={5} md={3} className={classes.item} >
+                    <Grid item xs={12} sm={5} md={4} className={classes.item} >
                         <Item item={site.expo} list={site.expo.list} />
                     </Grid>
-                    <Grid container item xs={12} sm={5} md={2} className={classes.item}>
+                    <Grid container item xs={12} sm={5} md={3} className={classes.item}>
                         <Grid item xs={12}>
                             <Item item={site.about} list={site.about.list} />
                         </Grid>

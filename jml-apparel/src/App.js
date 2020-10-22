@@ -49,23 +49,40 @@ function App() {
 
   theme.typography.subtitle1 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "0.5rem",
+    fontSize: "0.8rem",
     fontWeight: "normal",
   }
 
+  // theme.typography.h1 = {
+  //   fontFamily: "'Work Sans', sans-serif",
+  //   fontSize: "5rem",
+  //   fontWeight: "bold",
+  //   textTransform: "uppercase",
+  //   [theme.breakpoints.only('md')]: {
+  //     fontSize: "3.8rem",
+  //   },
+  //   [theme.breakpoints.only('sm')]: {
+  //     fontSize: '3.7rem',
+  //   },
+  //   [theme.breakpoints.only('xs')]: {
+  //     fontSize: '2.2rem',
+  //   },
+  // }
+
+  
   theme.typography.h1 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "5rem",
-    fontWeight: "bold",
+    fontSize: "3.1rem",
+    fontWeight: "700",
     textTransform: "uppercase",
     [theme.breakpoints.only('md')]: {
-      fontSize: "3.8rem",
+      fontSize: "2.2rem",
     },
     [theme.breakpoints.only('sm')]: {
-      fontSize: '3.7rem',
+      fontSize: '2.1rem',
     },
     [theme.breakpoints.only('xs')]: {
-      fontSize: '2.2rem',
+      fontSize: '1.7rem',
     },
   }
 
@@ -86,7 +103,7 @@ function App() {
   theme.typography.h2 = {
     fontFamily: "'Work Sans', sans-serif",
     fontSize: "2rem",
-    fontWeight: "bold",
+    fontWeight: "600",
     [theme.breakpoints.only('md')]: {
       fontSize: "1.3rem",
     },
@@ -100,13 +117,13 @@ function App() {
 
   theme.typography.h3 = {
     fontFamily: "'Work Sans', sans-serif",
-    fontSize: "0.7rem",
-    fontWeight: "normal",
+    fontSize: "1rem",
+    fontWeight: "bold",
     [theme.breakpoints.only('sm')]: {
-      fontSize: '0.7rem',
+      fontSize: '0.1',
     },
     [theme.breakpoints.only('xs')]: {
-      fontSize: '0.7rem',
+      fontSize: '0.1rem',
     },
   }
   theme.typography.body2 = theme.typography.body1;
