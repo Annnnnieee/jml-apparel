@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Digital() {
-    const trimsImages = [digital3DTrims01, digital3DTrims02, digital3DTrims03];
+    const trimsImages = [digital3DTrims01];
     const RFIDImages = [digitalRFID01, digitalRFID02, digitalRFID03];
 
     const classes = useStyles();

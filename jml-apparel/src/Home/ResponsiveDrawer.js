@@ -30,11 +30,13 @@ import logo from '../assets/logo-svg.svg';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    minHeight: "45px",
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1000,
     color: "black",
     backgroundColor: "white",
+    // minHeight: "45px",
   },
   listItem: {
     minWidth: 0,
@@ -56,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logoButtonText: {
-    padding: "0",
+    padding: "0px",
+    // maxWidth: "130%"
   },
   menuButton: {
     [theme.breakpoints.up('sm')]: {
@@ -69,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   toolBarRegular: {
-    minWidth: "0px",
+    //minHeight: "45px",
   },
   drawerPaper: {
     width: "100%",
