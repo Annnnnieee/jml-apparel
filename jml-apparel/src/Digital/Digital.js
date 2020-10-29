@@ -11,8 +11,9 @@ import CoverCard from '../CoverCard/CoverCard';
 import digitalCover from '../assets/digital-title.jpg';
 import digitalCoverAlt from '../assets/digital-alt-title.jpg';
 import digital3DTrims01 from '../assets/digital-3dtrims01.jpg';
-import digital3DTrims02 from '../assets/digital-3dtrims02.jpg';
-import digital3DTrims03 from '../assets/digital-3dtrims03.jpg';
+import digital3DTrimsVideo from '../assets/3d-trims-video-1080.mp4';
+// import digital3DTrims02 from '../assets/digital-3dtrims02.jpg';
+// import digital3DTrims03 from '../assets/digital-3dtrims03.jpg';
 // import digital3DTrims04 from '../assets/digital-3dtrims04.jpg';
 import digitalRFID01 from '../assets/digital-RFID01.jpg';
 import digitalRFID02 from '../assets/digital-RFID02.jpg';
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
     item: {
         background: "rgba(194, 194, 194, 0.2)",
-        padding: "3% 4.5% 3% 4.5%", 
+        padding: "3% 4.5% 3% 4.5%",
         marginBottom: "10px",
         [theme.breakpoints.down('xs')]: {
             padding: "4% 4.5% 4% 4.5%",
@@ -87,17 +88,23 @@ function Digital() {
     return (
         <div className={classes.root}>
             <div className={classes.introContainer}>
-                <CoverCard cover={digitalCover} coverAlt={digitalCoverAlt} title="Digital"/>
+                <CoverCard cover={digitalCover} coverAlt={digitalCoverAlt} title="Digital" />
             </div>
             <Box className={classes.item} >
                 <Typography variant="h2" className={classes.itemTitle} id="3d-trims-library">3D TRIMS LIBRARY</Typography>
                 <Typography variant="body2" className={classes.description}>
-                Cloud-based 3D soft trims library allows brands to utilize available 3D files to design and develop
-                 products in a digital ecosystem; provides compatible files for CLO, Browzwear and other digital software; reduces proto samples, 
+                    Cloud-based 3D soft trims library allows brands to utilize available 3D files to design and develop
+                    products in a digital ecosystem; provides compatible files for CLO, Browzwear and other digital software; reduces proto samples,
                  allows for rapid iteration and decision-making enhancement.</Typography>
 
                 <Grid container spacing={2} justify="right" className={classes.images}>
-                    {
+                    <Grid item xs={12} sm={6} md={4}>
+                        <video width="100%" height="auto" controls>
+                            <source src={digital3DTrimsVideo} type="video/mp4" />
+                            Your browser doesn't support videos
+                        </video>
+                    </Grid>
+                    {/* {
                         trimsImages.map(image => {
                             return (
                                 <Grid item xs={12} sm={2} >
@@ -105,7 +112,7 @@ function Digital() {
                                 </Grid>
                             )
                         })
-                    }
+                    } */}
                 </Grid>
             </Box>
 

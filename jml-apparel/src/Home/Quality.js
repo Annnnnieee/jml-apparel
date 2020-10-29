@@ -18,42 +18,42 @@ function Quality() {
   return (
     <div>
       <Hidden smDown>
-        <Grid container className="quality-section" spacing={1} justify="center">
-          <Grid item xs={3}>
+        <Grid container className="quality-section" spacing={1} justify="left">
+          <Grid item xs={2}>
             <ButtonBase
               component={HashLink}
               to="/quality-and-sustainability#bluesign-system-partner">
               <CustomCard image={quality01} />
             </ButtonBase>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={2}>
             <ButtonBase
               component={HashLink}
               to="/quality-and-sustainability#bv-accredited-lab">
               <CustomCard image={quality02} />
             </ButtonBase>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={2}>
             <ButtonBase
               component={HashLink}
               to="/quality-and-sustainability#grs-certified">
               <CustomCard image={quality03} />
             </ButtonBase>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={2}>
             <ButtonBase
               component={HashLink}
               to="/quality-and-sustainability#iso9001-certified-facility">
               <CustomCard image={quality04} />
             </ButtonBase>
           </Grid>
-          {/* <Grid item xs={2}>
+          <Grid item xs={2}>
             <ButtonBase
               component={HashLink}
               to="/quality-and-sustainability#oeko-tex-standard-100-tested-products">
               <CustomCard image={quality05} />
             </ButtonBase>
-          </Grid> */}
+          </Grid>
         </Grid>
       </Hidden>
 
@@ -79,11 +79,11 @@ function Quality() {
             to="/quality-and-sustainability#iso9001-certified-facility">
             <CustomCard image={quality04} />
           </ButtonBase>
-          {/* <ButtonBase
+          <ButtonBase
             component={HashLink}
             to="/quality-and-sustainability#oeko-tex-standard-100-tested-products">
             <CustomCard image={quality05} />
-          </ButtonBase> */}
+          </ButtonBase>
         </Carousel>
       </Hidden>
     </div >
