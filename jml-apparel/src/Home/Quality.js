@@ -1,8 +1,10 @@
 import React from 'react';
 import quality01 from '../assets/lp-quality01.jpg';
 import quality02 from '../assets/lp-quality02.jpg';
-import quality03 from '../assets/lp-quality03.jpg';
-import quality04 from '../assets/quality-iso9001.jpg';
+// import quality03 from '../assets/lp-quality03.jpg';
+import quality04 from '../assets/certified-iso-large.jpg';
+import quality03 from '../assets/certified-grs-large.jpg';
+// import quality04 from '../assets/quality-iso9001.jpg';
 import quality05 from '../assets/quality-oekotex-standard100.jpg';
 import { Hidden } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
