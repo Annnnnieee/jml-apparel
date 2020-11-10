@@ -9,7 +9,7 @@ import Expo from './Expo/Expo';
 import About from './About/About';
 import Footer from './Footer/Footer';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
