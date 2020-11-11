@@ -47,8 +47,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Item({ item, list }) {
     const classes = useStyles();
-
-    console.log(list);
     return (
         <div className={classes.item} >
             <Typography variant="h3">{item.title}</Typography>
