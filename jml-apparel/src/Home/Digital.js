@@ -83,4 +83,4 @@ function Digital(props) {
     );
 }
 
-export default Digital;
+export default withWidth()(Digital);

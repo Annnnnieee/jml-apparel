@@ -17,13 +17,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Portal from '@material-ui/core/Portal';
-
-
-
 import { NavHashLink } from 'react-router-hash-link';
-
-
-
 import logo from '../assets/logo-svg.svg';
 
 
@@ -121,7 +115,7 @@ function ListItemLink(props) {
     <li>
       <ListItem 
         button 
-        component={NavHashLink}
+        component={RouterLink}
         classes={classes}
         to={to}
         activeClassName="selected"
@@ -150,7 +144,7 @@ function NavItem(props) {
       activeClassName="selected"
       activeStyle={{ color: '#009966' }}
       classes={{ root: classes.listItem, text: classes.listItemText }}
-      component={NavHashLink}
+      component={RouterLink}
       to={to}>
       {props.children} </Button>
   )

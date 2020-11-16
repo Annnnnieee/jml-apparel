@@ -16,19 +16,21 @@ import {
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import ResponsiveDrawer from './Home/ResponsiveDrawer';
 
+import ScrollToTop from './Home/ScrollToTop'
+
 function App() {
   const theme = createMuiTheme({
     // props: {
-      overrides: {
-        MuiListItem: {
-          root: {
-            "&$selected": {
-              color: "red",
-              backgroundColor: "green",
-            }
+    overrides: {
+      MuiListItem: {
+        root: {
+          "&$selected": {
+            color: "red",
+            backgroundColor: "green",
           }
         }
-      },
+      }
+    },
     //   MuiButtonBase: {
     //     disableRipple: true,
     //   },
@@ -69,7 +71,7 @@ function App() {
   //   },
   // }
 
-  
+
   theme.typography.h1 = {
     fontFamily: "'Work Sans', sans-serif",
     fontSize: "3.1rem",
@@ -128,34 +130,38 @@ function App() {
   }
   theme.typography.body2 = theme.typography.body1;
 
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <ResponsiveDrawer />
-        <Switch>
-          <Route path="/product">
-            <Product />
-          </Route>
-          <Route path="/digital">
-            <Digital />
-          </Route>
-          <Route path="/quality-and-sustainability">
-            <Quality />
-          </Route>
-          <Route path="/expo-and-conference">
-            <Expo />
-          </Route>
-          <Route path="/about-us">
-            <About />
-          </Route>
-          <Route path="/contact-us">
-            <Contact />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-        <Footer />
+        <ScrollToTop>
+          <ResponsiveDrawer />
+
+          <Switch>
+            <Route path="/product">
+              <Product />
+            </Route>
+            <Route path="/digital">
+              <Digital />
+            </Route>
+            <Route path="/quality-and-sustainability">
+              <Quality />
+            </Route>
+            <Route path="/expo-and-conference">
+              <Expo />
+            </Route>
+            <Route path="/about-us">
+              <About />
+            </Route>
+            <Route path="/contact-us">
+              <Contact />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+          <Footer />
+        </ScrollToTop>
       </Router>
 
     </ThemeProvider>

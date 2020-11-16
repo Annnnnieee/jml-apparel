@@ -3,10 +3,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { HashLink } from 'react-router-hash-link';
 import {SiteMap as site} from '../SiteMap'
 import Link from '@material-ui/core/Link';
-
 
 import {HashLinkWithScroll} from '../HashLinkWithScroll/HashLinkWithScroll';
 

@@ -41,8 +41,8 @@ export const SiteMap = {
    about: {
         title: "About Us", path: "about-us", list:
             [
-                { title: "Our Values, Mission, & Vision", path: "our-values" },
                 { title: "Our Workplace & Community", path: "our-workplace-and-community" },
+                { title: "Our Values, Mission, & Vision", path: "our-values" },
             ]
     },
    contact: {
