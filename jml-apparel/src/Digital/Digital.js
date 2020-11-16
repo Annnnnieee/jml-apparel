@@ -12,6 +12,8 @@ import digitalCover from '../assets/digital-title.jpg';
 import digitalCoverAlt from '../assets/digital-alt-title.jpg';
 import digital3DTrims01 from '../assets/digital-3dtrims01.jpg';
 import digital3DTrimsVideo from '../assets/3d-trims-video-1080.mp4';
+import digitalVid2 from '../assets/digital-vid2.mp4'
+import digitalVid2Thumb from '../assets/digital-vid2-thumbnail.jpg'
 // import digital3DTrims02 from '../assets/digital-3dtrims02.jpg';
 // import digital3DTrims03 from '../assets/digital-3dtrims03.jpg';
 // import digital3DTrims04 from '../assets/digital-3dtrims04.jpg';
@@ -77,7 +79,11 @@ const useStyles = makeStyles((theme) => ({
             maxWidth: "100%"
         },
     },
-
+    // video: {
+    //     ['video']: {
+    //         objectFit: "fill"
+    //     },
+    // },
 }));
 
 function Digital() {
@@ -101,6 +107,12 @@ function Digital() {
                     <Grid item xs={12} sm={6} md={4}>
                         <video width="100%" height="auto" controls>
                             <source src={digital3DTrimsVideo} type="video/mp4" />
+                            Your browser doesn't support videos
+                        </video>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} >
+                        <video width="100%" height="auto" controls poster={digitalVid2Thumb}>
+                            <source src={digitalVid2} type="video/mp4" />
                             Your browser doesn't support videos
                         </video>
                     </Grid>
