@@ -122,7 +122,7 @@ function Product(props) {
                             as well as our reputation for efficiency and quick turn around.</p>
 
                         <p> Our designers are constantly updating both the look and the construction
-                        of our clothing trims to match your own merchanidise. We adhere to the
+                        of our clothing trims to match your own merchandise. We adhere to the
                             highest QC procedures and guarantee quality finished items.</p>
 
                         <ul>
