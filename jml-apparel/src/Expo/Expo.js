@@ -78,12 +78,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Expo() {
-    const events2020 =
-        [
-            { image: expo2020ipso, title: "ISPO", date: "July 2020", location: "Shanghai China", path: "2020-jul-ispo-shanghai" },
-            { image: expo2020PerformanceMunich, title: "Performance Days", date: "November 18-19, 2020", location: "Portland, Oregon, USA", path: "2020-nov-performance-days-portland" },
-            { image: expo2020PerformancePortland, title: "Performance Days", date: "December 9-10, 2020", location: "Munich, Germany", path: "2020-dec-performance-days-munich" },
-        ]
+    // const events2020 =
+    //     [
+    //         { image: expo2020ipso, title: "ISPO", date: "July 2020", location: "Shanghai China", path: "2020-jul-ispo-shanghai" },
+    //         { image: expo2020PerformanceMunich, title: "Performance Days", date: "November 18-19, 2020", location: "Portland, Oregon, USA", path: "2020-nov-performance-days-portland" },
+    //         { image: expo2020PerformancePortland, title: "Performance Days", date: "December 9-10, 2020", location: "Munich, Germany", path: "2020-dec-performance-days-munich" },
+    //     ]
 
     const events2021 =
         [
@@ -101,7 +101,7 @@ function Expo() {
             </div>
 
 
-            <Typography variant="h2" className={classes.expoHeader}>2020 EVENTS</Typography>
+            {/* <Typography variant="h2" className={classes.expoHeader}>2020 EVENTS</Typography>
             <Grid container spacing={1} justify="center" >
                 {
                     events2020.map(event => (
@@ -119,7 +119,7 @@ function Expo() {
                         </Grid>
                     ))
                 }
-            </Grid>
+            </Grid> */}
 
             <Typography variant="h2" className={classes.expoHeader}>2021 EVENTS</Typography>
             <Grid container spacing={1} justify="center" direction="row">

@@ -29,9 +29,9 @@ export const SiteMap = {
    expo: {
         title: "Expo & Conference", path: "expo-and-conference", list:
             [
-                { title: "2020 JUL ISPO (Shanghai)", path: "2020-jul-ispo-shanghai" },
-                { title: "2020 NOV Performance Days (Portland)", path: "2020-nov-performance-days-portland" },
-                { title: "2020 DEC Performance Days (Munich)", path: "2020-dec-performance-days-munich" },
+                // { title: "2020 JUL ISPO (Shanghai)", path: "2020-jul-ispo-shanghai" },
+                // { title: "2020 NOV Performance Days (Portland)", path: "2020-nov-performance-days-portland" },
+                // { title: "2020 DEC Performance Days (Munich)", path: "2020-dec-performance-days-munich" },
                 { title: "2021 JAN Outdoor Retailer Winter (Denver)", path: "2021-jan-outdoor-retailer-winter-denver" },
                 { title: "2021 APR  Performance Days (Munich)", path: "2021-apr-performance-days-munich" },
                 { title: "2021 JUN  Outdoor Retailer Summer (Denver)", path: "2021-jun-outdoor-retailer-summer-denver" },
